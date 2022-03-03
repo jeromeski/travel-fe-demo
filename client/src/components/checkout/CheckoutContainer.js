@@ -13,11 +13,17 @@ function CheckoutContainer() {
 		}
 	};
 
+  const handlePrev = () => {
+		if (currentIdx !== 0) {
+			setCurrentIdx(currentIdx - 1);
+		}
+	};
+
 	return (
 		<CheckoutControlFlow currentIdx={currentIdx}>
 			<CheckoutCart handleNext={handleNext} currentIdx={currentIdx} />
-			<CheckoutForm handleNext={handleNext} currentIdx={currentIdx} />
-			<CheckoutConfirmation currentIdx={currentIdx} />
+			<CheckoutForm handleNext={handleNext} handlePrev={handlePrev} currentIdx={currentIdx} />
+			<CheckoutConfirmation handlePrev={handlePrev} currentIdx={currentIdx} />
 		</CheckoutControlFlow>
 	);
 }

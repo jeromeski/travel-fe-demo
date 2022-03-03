@@ -1,11 +1,14 @@
 import StepContainer from "components/ui/step/StepContainer";
 import React, { Fragment } from "react";
 
-function CheckoutForm({ currentIdx, handleNext }) {
+function CheckoutForm({ currentIdx, handleNext, handlePrev }) {
 	return (
 		<Fragment>
 			<StepContainer currentIdx={currentIdx} />
 			<h1>Checkout Form</h1>
+			<button type="button" onClick={handlePrev}>
+				Back
+			</button>
 			<button type="button" onClick={handleNext}>
 				Next
 			</button>
