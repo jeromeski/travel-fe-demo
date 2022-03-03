@@ -1,11 +1,21 @@
-import StepContainer from "components/ui/step/StepContainer";
+import Input from "components/ui/Input";
+import { Field, Form, Formik } from "formik";
 import React, { Fragment } from "react";
 
 function CheckoutForm({ currentIdx, handleNext, handlePrev }) {
 	return (
 		<Fragment>
-			<StepContainer currentIdx={currentIdx} />
 			<h1>Checkout Form</h1>
+			<Formik>
+				{(formik) => {
+					//
+					return (
+						<Form>
+							<Field name="firstName" labelName="First Name*" component={Input} />
+						</Form>
+					);
+				}}
+			</Formik>
 			<button type="button" onClick={handlePrev}>
 				Back
 			</button>
