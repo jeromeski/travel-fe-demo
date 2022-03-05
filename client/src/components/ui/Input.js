@@ -1,12 +1,14 @@
 import { ErrorMessage } from "formik";
 import React from "react";
 
-function Input({ field, labelName, type }) {
+function Input({ field, labelName, type = "text", cn }) {
 	return (
-		<div className="form-group">
+		<div className={`form-group ${cn ? cn : ""}`}>
 			<label>{labelName}</label>
 			<input type={type} {...field} />
-			<ErrorMessage name={field.name} />
+			<div>
+				<ErrorMessage name={field.name} />
+			</div>
 		</div>
 	);
 }

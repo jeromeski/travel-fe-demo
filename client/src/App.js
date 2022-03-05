@@ -4,6 +4,9 @@ import Layout from "components/layout/Layout";
 import React, { Fragment } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import CheckoutPage from "pages/CheckoutPage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@reach/combobox/styles.css";
+import "assets/styles.css";
 
 function App() {
 	return (
