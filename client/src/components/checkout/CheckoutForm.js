@@ -1,5 +1,5 @@
 import Input from "components/ui/Input";
-import { ErrorMessage, Field, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { Fragment, useEffect } from "react";
 import INITIAL_VALUES from "components/form-model/form-initial-values";
 import checkoutFormModel from "components/form-model/checkout-form-model";
@@ -97,29 +97,34 @@ function MyForm({
 	}, [values, handleUpdateForm]);
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<Form>
 			<div className="d-flex flex-wrap">
 				<Field
 					name={formField.firstName.name}
 					labelName={formField.firstName.label}
 					component={Input}
+					placeHolder="Enter First Name"
 					cn="mr-2 d-inline-block"
 				/>
 				<Field
 					name={formField.lastName.name}
 					labelName={formField.lastName.label}
 					component={Input}
+					placeHolder="Enter Last Name"
 				/>
 				<Field
 					name={formField.email.name}
+					type="email"
 					labelName={formField.email.label}
 					component={Input}
 					cn="mr-2 d-inline-block"
+					placeHolder="Enter email"
 				/>
 				<Field
 					name={formField.confirmEmail.name}
 					labelName={formField.confirmEmail.label}
 					component={Input}
+					placeHolder="Confirm Email"
 				/>
 				<Field
 					name={formField.phone.name}
@@ -127,18 +132,21 @@ function MyForm({
 					component={Input}
 					cn="w-100 d-inline-block"
 					type="number"
+					placeHolder="Enter Phone Number"
 				/>
 				<Field
 					name={formField.nameOnCard.name}
 					labelName={formField.nameOnCard.label}
 					component={Input}
 					cn="mr-2 d-inline-block"
+					placeHolder="Name on Card"
 				/>
 				<Field
 					name={formField.cardNumber.name}
 					labelName={formField.cardNumber.label}
 					component={Input}
 					type="number"
+					placeHolder="Enter Card Number"
 				/>
 
 				<Field name={formField.expiryDate.month.name}>
@@ -177,6 +185,7 @@ function MyForm({
 					type="number"
 					component={Input}
 					cn="w-100"
+					placeHolder="Enter CVV"
 				/>
 				<Field name={formField.country.name}>
 					{({ form, field, meta }) => {
@@ -205,23 +214,27 @@ function MyForm({
 					labelName={formField.street1.label}
 					component={Input}
 					cn="mr-2 d-inline-block"
+					placeHolder="Enter Street"
 				/>
 				<Field
 					name={formField.street2.name}
 					labelName={formField.street2.label}
 					component={Input}
+					placeHolder="Add Street Info"
 				/>
 				<Field
 					name={formField.city.name}
 					labelName={formField.city.label}
 					component={Input}
 					cn=" mr-2 d-inline-block"
+					placeHolder="Enter City"
 				/>
 				<Field
 					name={formField.state.name}
 					labelName={formField.state.label}
 					component={Input}
 					cn="w-25 mr-2 d-inline-block"
+					placeHolder="Enter State"
 				/>
 				<Field
 					name={formField.postalCode.name}
@@ -229,13 +242,14 @@ function MyForm({
 					component={Input}
 					type="number"
 					cn=" d-inline-block"
+					placeHolder="Enter Postal Code"
 				/>
 				<Field name={formField.additionalInfo.name}>
 					{({ field }) => {
 						return (
 							<div className="form-group w-100">
 								<label>{formField.additionalInfo.label}</label>
-								<textarea row={4} {...field} />
+								<textarea row={4} {...field} placeHolder="Enter Additional Info" />
 							</div>
 						);
 					}}
@@ -244,7 +258,7 @@ function MyForm({
 					{({ field }) => {
 						return (
 							<div className="form-group">
-								<input type="checkbox" {...field} />
+								<input type="checkbox" checked={field.value} {...field} />
 								<label className="d-inline ml-2">{formField.tos.label}</label>
 								<div className="text-danger">
 									<ErrorMessage name={formField.tos.name} />
@@ -254,6 +268,6 @@ function MyForm({
 					}}
 				</Field>
 			</div>
-		</form>
+		</Form>
 	);
 }

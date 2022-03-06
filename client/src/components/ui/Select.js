@@ -20,7 +20,7 @@ function Select({ initValFn: values, labelName, field, form, placeHolder }) {
 			<Combobox aria-labelledby="select" onSelect={handleSelect} name={field.name}>
 				<ComboboxInput
 					name={field.name}
-					placeholder={field.value || placeHolder}
+					placeholder={placeHolder}
 					className="months-search-input"
 					onBlur={() => {
 						form.setFieldTouched(field.name, true);
