@@ -10,6 +10,9 @@ function Steps({currentIdx}) {
 	if (currentIdx === 2) {
 		return <h1>3</h1>;
 	}
+  if (currentIdx === 3) {
+		return <h1>4</h1>;
+	}
 }
 
 export default Steps

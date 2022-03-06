@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import * as Yup from "yup";
-import moment from "moment";
+// import moment from "moment";
 import checkoutFormModel from "./checkout-form-model";
 const {
 	formField: {
@@ -25,7 +25,7 @@ const {
 const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
 const emailRegEx =
 	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const phoneRegEx = "";
+
 
 const validationSchema = Yup.object().shape({
 	[firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
@@ -72,7 +72,7 @@ const validationSchema = Yup.object().shape({
 	[cvv.name]: Yup.string()
 		.required(`${cvv.requiredErrorMsg}`)
 		.test("len", `${cvv.invalidErrorMsg}`, (val) => val && val.length === 3),
-	[tos.name]: Yup.boolean().required(`${cvv.requiredErrorMsg}`)
+	[tos.name]: Yup.boolean().required(`${tos.requiredErrorMsg}`)
 });
 
 export default validationSchema;

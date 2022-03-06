@@ -13,16 +13,16 @@ const {
 		cvv,
 		country,
 		street1,
-		// street2,
+		street2,
 		city,
 		state,
 		postalCode,
-		// additionalInfo,
+		additionalInfo,
 		tos
 	}
 } = checkoutFormModel;
 
-export default {
+const checkout = {
 	[firstName.name]: "",
 	[lastName.name]: "",
 	[email.name]: "",
@@ -35,10 +35,12 @@ export default {
 	[cvv.name]: "",
 	[country.name]: "",
 	[street1.name]: "",
-	// [street2.name]: "",
+	[street2.name]: "",
 	[city.name]: "",
 	[state.name]: "",
 	[postalCode.name]: "",
-	// [additionalInfo.name]: "",
+	[additionalInfo.name]: "",
 	[tos.name]: ""
 };
+
+export default checkout;

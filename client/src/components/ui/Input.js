@@ -7,7 +7,9 @@ function Input({ field, labelName, type = "text", cn }) {
 			<label>{labelName}</label>
 			<input type={type} {...field} />
 			<div>
-				<ErrorMessage name={field.name} />
+				<div className="text-danger">
+					<ErrorMessage name={field.name} />
+				</div>
 			</div>
 		</div>
 	);

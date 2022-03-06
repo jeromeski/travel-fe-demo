@@ -20,7 +20,7 @@ function Select({ initValFn: values, labelName, field, form, placeHolder }) {
 			<Combobox aria-labelledby="select" onSelect={handleSelect} name={field.name}>
 				<ComboboxInput
 					name={field.name}
-					placeholder={placeHolder}
+					placeholder={field.value || placeHolder}
 					className="months-search-input"
 					onBlur={() => {
 						form.setFieldTouched(field.name, true);
@@ -34,7 +34,9 @@ function Select({ initValFn: values, labelName, field, form, placeHolder }) {
 					</ComboboxList>
 				</ComboboxPopover>
 			</Combobox>
-			<ErrorMessage name={field.name} />
+			<div className="text-danger">
+				<ErrorMessage name={field.name} />
+			</div>
 		</div>
 	);
 }

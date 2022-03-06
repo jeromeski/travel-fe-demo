@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-	formId: "checkoutForm",
+	formId: "checkout",
 	formField: {
 		firstName: {
 			name: "firstName",
