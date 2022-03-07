@@ -8,13 +8,17 @@ import checkoutFormModel from "components/form-model/checkout-form-model";
 import _ from "lodash";
 import cards from "assets/images/cards.png";
 import ccv from "assets/images/icon_ccv.gif";
+import buttonStyles from "assets/components/button.module.css";
+import Button from 'components/ui/Button';
+import { Fragment } from 'react/cjs/react.development';
 
 const { formId, formField } = checkoutFormModel;
 
 function CustomForm({ handleUpdateForm }) {
-	const { values, errors, submitForm, touched } = useFormikContext();
+	const { values, errors, submitForm, touched, ...rest } = useFormikContext();
 	const [disabled, setDisabled] = useState(true);
 
+	console.log(rest);
 	useEffect(() => {
 		if (values) {
 			handleUpdateForm(values);
@@ -175,12 +179,19 @@ function CustomForm({ handleUpdateForm }) {
 										<div className="col-md-4">
 											<Field name={formField.cvv.name}>
 												{({ field }) => (
-													<input
-														type="number"
-														// placeholder="CCV"
-														className="form-control"
-														{...field}
-													/>
+													<Fragment>
+														<input
+															type="text"
+															// placeholder="CCV"
+															className="form-control"
+															{...field}
+														/>
+														<div className="text-danger">
+															<small>
+																<ErrorMessage name={field.name} />
+															</small>
+														</div>
+													</Fragment>
 												)}
 											</Field>
 										</div>
@@ -294,9 +305,9 @@ function CustomForm({ handleUpdateForm }) {
 					{({ field }) => {
 						return (
 							<div className="form-group">
-								<label class="checkbox-list">
+								<label className="checkbox-list">
 									<input type="checkbox" name="s" checked={field.value} {...field} />
-									<span class="custom-checkbox"></span>I accept terms and conditions and general
+									<span className="custom-checkbox"></span>I accept terms and conditions and general
 									policy.
 									<div className="text-danger">
 										<ErrorMessage name={formField.tos.name} />
@@ -315,7 +326,22 @@ function CustomForm({ handleUpdateForm }) {
 				>
 					Back
 				</button>
-				<button
+				<Button
+					type="submit"
+					styleClassNames={buttonStyles["button-primary"]}
+					disabled={disabled}
+					// loading={isSubmitting}
+					children="Submit"
+				/>
+			</div>
+		</Form>
+	);
+}
+
+export default CustomForm;
+
+/*
+<button
 					type="button"
 					className="button-primary"
 					onClick={
@@ -326,9 +352,4 @@ function CustomForm({ handleUpdateForm }) {
 					disabled={disabled}>
 					Continue
 				</button>
-			</div>
-		</Form>
-	);
-}
-
-export default CustomForm;
+*/ 

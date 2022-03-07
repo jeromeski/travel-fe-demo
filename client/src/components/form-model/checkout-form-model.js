@@ -46,13 +46,13 @@ export default {
 			month: {
 				name: "expiryDate.month",
 				label: "Month*",
-				requiredErrorMsg: "Month is required",
+				requiredErrorMsg: "Required",
 				invalidErrorMsg: "Month is not valid"
 			},
 			year: {
 				name: "expiryDate.year",
 				label: "Year*",
-				requiredErrorMsg: "Year is required",
+				requiredErrorMsg: "Required",
 				invalidErrorMsg: "Year is not valid"
 			},
 			invalidErrorMsg: "Invalid Expiry Date"
@@ -60,7 +60,7 @@ export default {
 		cvv: {
 			name: "cvv",
 			label: "CVV*",
-			requiredErrorMsg: "CVV is required",
+			requiredErrorMsg: "Required",
 			invalidErrorMsg: "CVV is invalid (e.g. 357)"
 		},
 		country: {
@@ -71,7 +71,7 @@ export default {
 		street1: {
 			name: "street1",
 			label: "Street Line 1*",
-			requiredErrorMsg: "Street Line 1 is required"
+			requiredErrorMsg: "Street is required"
 		},
 		street2: {
 			name: "street2",

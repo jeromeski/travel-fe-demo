@@ -977,6 +977,112 @@ form label {
   outline: 0;
 }
 
+
+
+/*=================================
+>>>> Sidebar
+=================================*/
+
+.sidebar .widget-bg {
+  background-color: #F8F8F8;
+  border-bottom: 3px solid #0791BE;
+  margin-bottom: 50px;
+  padding: 30px;
+}
+.sidebar .widget-bg .bg-title {
+  background-color: #0791BE;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.sidebar .sidebar-list ul {
+  padding: 0;
+  margin: 0;
+}
+.sidebar .sidebar-list li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+.sidebar .sidebar-list li i {
+  color: #0791BE;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.sidebar .faq-widget .accordion .card button {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 18px;
+  text-transform: capitalize;
+}
+.sidebar .widget-icon {
+  background-color: #0791BE;
+  border-radius: 100%;
+  color: #ffffff;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.sidebar .or-style {
+  color: #0791BE;
+  display: table;
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.sidebar .or-style:before, .sidebar .or-style:after {
+  background-color: #d1d1d1;
+  content: "";
+  width: 60px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+}
+.sidebar .or-style:before {
+  left: 0;
+}
+.sidebar .or-style:after {
+  right: 0;
+}
+.sidebar .upload-widget .button-primary {
+  margin-top: 20px;
+}
+
+.secondary-callback {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+}
+.secondary-callback .section-heading {
+  color: #ffffff;
+  margin-bottom: 0;
+}
+.secondary-callback .section-heading h2,
+.secondary-callback .section-heading h5 {
+  color: #ffffff;
+}
+.secondary-callback .section-heading h5:before {
+  background-color: #ffffff;
+}
+.secondary-callback .section-heading .button-primary {
+  margin-top: 15px;
+}
+.secondary-callback .section-heading .heading-inner {
+  background-color: rgba(7, 145, 190, 0.7);
+  padding: 50px;
+}
+
 /*--------------------------------------------------------------
 >>> button
 ----------------------------------------------------------------*/
@@ -1100,111 +1206,6 @@ input[type=submit]:focus {
 .button-text:hover, .button-text:focus, .button-text:active {
   color: #F56960;
 }
-
-/*=================================
->>>> Sidebar
-=================================*/
-
-.sidebar .widget-bg {
-  background-color: #F8F8F8;
-  border-bottom: 3px solid #0791BE;
-  margin-bottom: 50px;
-  padding: 30px;
-}
-.sidebar .widget-bg .bg-title {
-  background-color: #0791BE;
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 25px;
-}
-.sidebar .sidebar-list ul {
-  padding: 0;
-  margin: 0;
-}
-.sidebar .sidebar-list li {
-  list-style: none;
-  margin-bottom: 8px;
-}
-.sidebar .sidebar-list li i {
-  color: #0791BE;
-  margin-right: 10px;
-  font-size: 14px;
-}
-.sidebar .faq-widget .accordion .card button {
-  font-size: 15px;
-  font-weight: 600;
-  padding: 18px;
-  text-transform: capitalize;
-}
-.sidebar .widget-icon {
-  background-color: #0791BE;
-  border-radius: 100%;
-  color: #ffffff;
-  height: 100px;
-  width: 100px;
-  text-align: center;
-  line-height: 100px;
-  font-size: 48px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
-.sidebar .or-style {
-  color: #0791BE;
-  display: table;
-  font-size: 18px;
-  font-weight: 700;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 70px;
-  padding-right: 70px;
-}
-.sidebar .or-style:before, .sidebar .or-style:after {
-  background-color: #d1d1d1;
-  content: "";
-  width: 60px;
-  height: 1px;
-  position: absolute;
-  top: 50%;
-  display: inline-block;
-}
-.sidebar .or-style:before {
-  left: 0;
-}
-.sidebar .or-style:after {
-  right: 0;
-}
-.sidebar .upload-widget .button-primary {
-  margin-top: 20px;
-}
-
-.secondary-callback {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 80px 0;
-}
-.secondary-callback .section-heading {
-  color: #ffffff;
-  margin-bottom: 0;
-}
-.secondary-callback .section-heading h2,
-.secondary-callback .section-heading h5 {
-  color: #ffffff;
-}
-.secondary-callback .section-heading h5:before {
-  background-color: #ffffff;
-}
-.secondary-callback .section-heading .button-primary {
-  margin-top: 15px;
-}
-.secondary-callback .section-heading .heading-inner {
-  background-color: rgba(7, 145, 190, 0.7);
-  padding: 50px;
-}
-
 
 /*--------------------------------------------------------------
 >>> table
