@@ -5,6 +5,7 @@ function Input({ field, labelName, type = "text", cn, placeHolder }) {
 	return (
 		<div className={`form-group ${cn ? cn : ""}`}>
 			<label>{labelName}</label>
+			{/*<input type="hidden" value="pryaer" />*/}
 			<input type={type} {...field} placeholder={placeHolder} />
 			<div>
 				<div className="text-danger">

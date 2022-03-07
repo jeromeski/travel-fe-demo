@@ -11,7 +11,7 @@ function CheckoutCallback({ currentIdx, setCurrentIdx, text, isActive }) {
 			const timer = setTimeout(() => {
 				setCurrentIdx(currentIdx + 1);
 				clearTimeout(timer);
-			}, [5000]);
+			}, [3000]);
 		}
 		return () => {
 			current = false;

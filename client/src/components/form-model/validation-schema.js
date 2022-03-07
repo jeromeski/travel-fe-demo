@@ -38,14 +38,30 @@ const validationSchema = Yup.object().shape({
 		.oneOf([Yup.ref("email"), null], "Email must match"),
 	[phone.name]: Yup.string()
 		.required("Phone number is required")
-		.test("len", `${phone.invalidErrorMsg}`, (val) => val && val.length === 9),
+		.test("len", `${phone.invalidErrorMsg}`, (val) => {
+			if (val.length > 9) {
+				return false;
+			}
+			if (val.length < 9) {
+				return false;
+			}
+			return true;
+		}),
 	[country.name]: Yup.string().nullable().required(`${country.requiredErrorMsg}`),
 	[street1.name]: Yup.string().required(`${street1.requiredErrorMsg}`),
 	[city.name]: Yup.string().nullable().required(`${city.requiredErrorMsg}`),
 	[state.name]: Yup.string().nullable().required(`${state.requiredErrorMsg}`),
 	[postalCode.name]: Yup.string()
 		.required(`${postalCode.requiredErrorMsg}`)
-		.test("len", `${postalCode.invalidErrorMsg}`, (val) => val && val.length === 5),
+		.test("len", `${postalCode.invalidErrorMsg}`, (val) => {
+			if (val.length > 5) {
+				return false;
+			}
+			if (val.length < 5) {
+				return false;
+			}
+			return true;
+		}),
 	[tos.name]: Yup.string().required(`${tos.requiredErrorMsg}`),
 	[nameOnCard.name]: Yup.string().required(`${nameOnCard.requiredErrorMsg}`),
 	[cardNumber.name]: Yup.string()
@@ -72,7 +88,15 @@ const validationSchema = Yup.object().shape({
 	[cvv.name]: Yup.string()
 		.required(`${cvv.requiredErrorMsg}`)
 		.test("len", `${cvv.invalidErrorMsg}`, (val) => val && val.length === 3),
-	[tos.name]: Yup.boolean().required(`${tos.requiredErrorMsg}`)
+	[tos.name]: Yup.boolean()
+		.required(`${tos.requiredErrorMsg}`)
+		.test("tos", "You need to accept TOS", (value) => {
+			if (value === false) {
+				return false;
+			} else {
+				return true;
+			}
+		})
 });
 
 export default validationSchema;

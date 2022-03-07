@@ -8,7 +8,7 @@ import {
 } from "@reach/alert-dialog";
 import styled from "styled-components";
 
-const Modal = ({ showDialog, setShowDialog, handleSubmit, values, resetForm }) => {
+const Modal = ({ showDialog, setShowDialog, onConfirmation, values, resetForm }) => {
 	const cancelRef = useRef();
 	const close = () => setShowDialog(false);
 	return (
@@ -22,7 +22,7 @@ const Modal = ({ showDialog, setShowDialog, handleSubmit, values, resetForm }) =
 					</AlertDialogDescription>
 
 					<div className="alert-buttons mt-5">
-						<button type="button" onClick={() => handleSubmit(values, resetForm)}>
+						<button type="button" onClick={() => onConfirmation(values, resetForm)}>
 							Yes, Submit!
 						</button>{" "}
 						<button type="button" ref={cancelRef} onClick={() => close()}>

@@ -6,7 +6,6 @@ function useLocalStorageState({ key, value }) {
 	const initialValue = Object.keys(parsedLocalStorage).length > 0 ? parsedLocalStorage : value;
 
 	const [localStorageState, setLocalStorageState] = useState(initialValue);
-	console.log("localStorageState", localStorageState);
 
 	const handleUpdateLocalStorageState = useCallback(
 		(item) => {

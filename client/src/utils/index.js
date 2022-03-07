@@ -13,3 +13,18 @@ export function yearList(years) {
 	return _.range(start, yearsToShow);
 }
 
+export function getFormikProps(data) {
+	function getFormProps(props) {
+		return props;
+	}
+
+	function getValuesProps(props) {
+		return props;
+	}
+
+	return {
+		getFormProps,
+		getValuesProps
+	};
+}
+

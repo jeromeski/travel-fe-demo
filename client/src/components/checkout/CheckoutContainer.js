@@ -10,10 +10,10 @@ import Container from "components/ui/Container";
 import checkoutFormModel from "components/form-model/checkout-form-model";
 
 import CheckoutCallback from "./CheckoutCallback";
+import { DialogProvider } from "context/dialog";
 
 function CheckoutContainer() {
 	const [currentIdx, setCurrentIdx] = useState(1);
-	const [showDialog, setShowDialog] = React.useState(false);
 
 	const handleNext = () => {
 		if (currentIdx < 2) {
@@ -27,17 +27,14 @@ function CheckoutContainer() {
 		}
 	};
 
-	const handleConfirm = (e, setTouched) => {
-		setTouched();
-		e.preventDefault();
-	};
-
-	const handleSubmit = (values, resetForm) => {
+	const onConfirmation = (values, resetForm) => {
 		console.log(values);
 		resetForm();
 		localStorage.setItem("travel:checkout", "{}");
 		setCurrentIdx(currentIdx + 1);
 	};
+
+	// TODOS --> Checkout container context para sa showDialog
 
 	return (
 		<Container>
@@ -46,15 +43,15 @@ function CheckoutContainer() {
 					<StepsContainer currentIdx={currentIdx} />
 					<CheckoutControlFlow currentIdx={currentIdx}>
 						<CheckoutCart handleNext={handleNext} currentIdx={currentIdx} />
-						<CheckoutForm
-							handleNext={handleNext}
-							handlePrev={handlePrev}
-							currentIdx={currentIdx}
-							handleConfirm={handleConfirm}
-							showDialog={showDialog}
-							setShowDialog={setShowDialog}
-							handleSubmit={handleSubmit}
-						/>
+						<DialogProvider>
+							<CheckoutForm
+								handleNext={handleNext}
+								handlePrev={handlePrev}
+								currentIdx={currentIdx}
+								setCurrentIdx={setCurrentIdx}
+								onConfirmation={onConfirmation}
+							/>
+						</DialogProvider>
 						<CheckoutCallback
 							text="Loading..."
 							setCurrentIdx={setCurrentIdx}
