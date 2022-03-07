@@ -39,10 +39,10 @@ const validationSchema = Yup.object().shape({
 	[phone.name]: Yup.string()
 		.required("Phone number is required")
 		.test("len", `${phone.invalidErrorMsg}`, (val) => {
-			if (val.length > 9) {
+			if (val && val.length > 9) {
 				return false;
 			}
-			if (val.length < 9) {
+			if (val && val.length < 9) {
 				return false;
 			}
 			return true;
@@ -54,10 +54,10 @@ const validationSchema = Yup.object().shape({
 	[postalCode.name]: Yup.string()
 		.required(`${postalCode.requiredErrorMsg}`)
 		.test("len", `${postalCode.invalidErrorMsg}`, (val) => {
-			if (val.length > 5) {
+			if (val && val.length > 5) {
 				return false;
 			}
-			if (val.length < 5) {
+			if (val && val.length < 5) {
 				return false;
 			}
 			return true;
@@ -87,7 +87,13 @@ const validationSchema = Yup.object().shape({
 	// 	}),
 	[cvv.name]: Yup.string()
 		.required(`${cvv.requiredErrorMsg}`)
-		.test("len", `${cvv.invalidErrorMsg}`, (val) => val && val.length === 3),
+		.test("len", `${cvv.invalidErrorMsg}`, (val) => {
+			if (val && val.length === 3) {
+				return true;
+			} else {
+				return false;
+			}
+		}),
 	[tos.name]: Yup.boolean()
 		.required(`${tos.requiredErrorMsg}`)
 		.test("tos", "You need to accept TOS", (value) => {

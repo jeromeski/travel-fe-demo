@@ -9,14 +9,13 @@ import {
 
 import { ErrorMessage } from "formik";
 
-function Select({ initValFn: values, labelName, field, form, placeHolder }) {
+function Select({ initValFn: values, field, form, placeHolder }) {
 	const handleSelect = (val) => {
 		form.setFieldValue(field.name, val);
 	};
 
 	return (
 		<div className="form-group mb-2 mr-2">
-			<label>{labelName}</label>
 			<Combobox aria-labelledby="select" onSelect={handleSelect} name={field.name}>
 				<ComboboxInput
 					name={field.name}
@@ -35,7 +34,9 @@ function Select({ initValFn: values, labelName, field, form, placeHolder }) {
 				</ComboboxPopover>
 			</Combobox>
 			<div className="text-danger">
-				<ErrorMessage name={field.name} />
+				<small>
+					<ErrorMessage name={field.name} />
+				</small>
 			</div>
 		</div>
 	);

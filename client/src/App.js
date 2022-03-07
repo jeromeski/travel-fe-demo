@@ -5,6 +5,7 @@ import React, { Fragment } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import CheckoutPage from "pages/CheckoutPage";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "assets/vendors/fontawesome/css/all.css";
 import "@reach/combobox/styles.css";
 import "assets/styles.css";
 

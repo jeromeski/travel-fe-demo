@@ -1,15 +1,18 @@
 import { ErrorMessage } from "formik";
 import React from "react";
+import { Fragment } from "react";
 
-function Input({ field, labelName, type = "text", cn, placeHolder }) {
+function Input({ field, labelName, type = "text", placeHolder }) {
 	return (
-		<div className={`form-group ${cn ? cn : ""}`}>
+		<div className="form-group">
 			<label>{labelName}</label>
 			{/*<input type="hidden" value="pryaer" />*/}
-			<input type={type} {...field} placeholder={placeHolder} />
+			<input type={type} {...field} placeholder={placeHolder} className="form-control" />
 			<div>
 				<div className="text-danger">
-					<ErrorMessage name={field.name} />
+					<small>
+						<ErrorMessage name={field.name} />
+					</small>
 				</div>
 			</div>
 		</div>
