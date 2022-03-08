@@ -7,13 +7,12 @@ import CheckoutControlFlow from "./CheckoutControlFlow";
 import CheckoutForm from "./CheckoutForm";
 import Container from "components/ui/Container";
 
-import checkoutFormModel from "components/form-model/checkout-form-model";
 
 import CheckoutCallback from "./CheckoutCallback";
 import { DialogProvider } from "context/dialog";
 
 function CheckoutContainer() {
-	const [currentIdx, setCurrentIdx] = useState(1);
+	const [currentIdx, setCurrentIdx] = useState(0);
 
 	const handleNext = () => {
 		if (currentIdx < 2) {
