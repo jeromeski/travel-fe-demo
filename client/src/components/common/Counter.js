@@ -21,7 +21,7 @@ function Counter({ item, increment, decrement }) {
 			<button type="button" className="minus-btn" onClick={handleDecrement}>
 				<i className="fa fa-minus" />
 			</button>
-			<input className="quantity" type="number" placeholder={item.qty} onChange={handleChange} />
+			<input className="quantity" type="text" placeholder={item.qty} onChange={handleChange} />
 			<button type="button" className="plus-btn" onClick={handleIncrement}>
 				<i className="fa fa-plus" />
 			</button>

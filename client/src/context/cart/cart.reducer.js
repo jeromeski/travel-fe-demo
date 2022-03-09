@@ -1,5 +1,4 @@
 import {
-	addItemWithQuantity,
 	calculateItemsSubTotalAmount,
 	calculateItemsTotalAmount,
 	calculateItemsTotalQuantity,
@@ -8,10 +7,8 @@ import {
 
 export const INCREASE_QUANTITY = "INCREASE_QUANTITY";
 export const DECREASE_QUANTITY = "DECREASE_QUANTITY";
-export const ADD_ITEM_WITH_QUANTITY = "ADD_ITEM_WITH_QUANTITY";
-export const REMOVE_ITEM_OR_QUANTITY = "REMOVE_ITEM_OR_QUANTITY";
-export const ADD_ITEM = "ADD_ITEM";
-export const REMOVE_ITEM = "REMOVE_ITEM";
+export const ADD_ITEM_TO_CART = "ADD_ITEM_TO_CART";
+export const REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART";
 export const RESET_CART = "RESET_CART";
 
 export const initialState = {
@@ -52,6 +49,32 @@ function cartReducer(state, action) {
 				);
 				return generateFinalState(state, items);
 			}
+		}
+		case ADD_ITEM_TO_CART: {
+			const existingItem = state.items.findIndex(
+				(existingItem) => existingItem._id === action.item._id
+			);
+
+			if (existingItem !== -1) {
+				return state;
+			}
+			const updatedItems = [...state.items, action.item];
+			console.log("updatedItems -->", updatedItems);
+			const items = updatedItems.map((item) =>
+				item._id === action.item._id
+					? {
+							...item,
+							qty: item.qty + 1
+					  }
+					: item
+			);
+
+			return generateFinalState(state, items);
+		}
+
+		case REMOVE_ITEM_FROM_CART: {
+			const items = state.items.filter((item) => item._id !== action.id);
+			return generateFinalState(state, items);
 		}
 		default:
 			return state;

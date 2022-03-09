@@ -2,11 +2,11 @@ import React, { createContext, useContext, useReducer, useMemo, useEffect } from
 import { useLocalStorage } from "react-use";
 
 import cartReducer, {
-	ADD_ITEM,
-	REMOVE_ITEM,
-	initialState,
+	ADD_ITEM_TO_CART,
+	REMOVE_ITEM_FROM_CART,
 	INCREASE_QUANTITY,
-	DECREASE_QUANTITY
+	DECREASE_QUANTITY,
+	initialState
 } from "./cart.reducer";
 
 import { getItem } from "./cart.utils";
@@ -51,14 +51,14 @@ function CartProvider(props) {
 
 	const clearItemFromCart = (id) => {
 		dispatch({
-			type: REMOVE_ITEM,
+			type: REMOVE_ITEM_FROM_CART,
 			id
 		});
 	};
 
 	const addItemToCart = (item) => {
 		dispatch({
-			type: ADD_ITEM,
+			type: ADD_ITEM_TO_CART,
 			item
 		});
 	};

@@ -1,9 +1,8 @@
 import CartFooter from "components/cart/CartFooter";
 import CartItem from "components/cart/CartItem";
 import DiscountForm from "components/cart/DiscountForm";
-import { useCart } from "contexts/cart/cart.provider";
+import { useCart } from "context/cart/cart.provider";
 import React from "react";
-import { useLogger } from "react-use";
 
 function CheckoutCart({ currentIdx, handleNext }) {
 	const {
@@ -34,7 +33,7 @@ function CheckoutCart({ currentIdx, handleNext }) {
 					<CartFooter />
 				</div>
 				<div className="checkBtnArea text-right">
-					<a href="#" className="button-primary">
+					<a href="#" className="button-primary" onClick={() => handleNext()}>
 						checkout
 					</a>
 				</div>

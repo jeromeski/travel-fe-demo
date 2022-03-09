@@ -1,13 +1,19 @@
-import { useCart } from "contexts/cart/cart.provider";
+import { useCart } from "context/cart/cart.provider";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import RatingStars from "./common/RatingStars";
 
 function PackageCard(item) {
 	const { image, price, days, nights, maxCount, destination, name, reviews, rating } = item;
-	const { addItem } = useCart();
-	const handleBook = () => {
-		addItem(item);
+	const { addItemToCart } = useCart();
+	const history = useHistory();
+
+	const handleAddToCart = (e) => {
+		e.preventDefault();
+		addItemToCart(item);
+		history.push("/checkout-flow");
 	};
+
 	return (
 		<div className="col-lg-4 col-md-6">
 			<div className="package-wrap">
@@ -51,7 +57,7 @@ function PackageCard(item) {
 							tellus, luctus nec ullam elit tellpus.
 						</p>
 						<div className="btn-wrap">
-							<a href="#" className="button-text width-6" onClick={handleBook}>
+							<a href="#" className="button-text width-6" onClick={handleAddToCart}>
 								Book Now
 								<i className="fas fa-arrow-right" />
 							</a>

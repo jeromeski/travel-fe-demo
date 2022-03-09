@@ -1,19 +1,27 @@
-import { useCart } from "contexts/cart/cart.provider";
+import { useCart } from "context/cart/cart.provider";
 import React from "react";
 import { useLogger } from "react-use";
 import Counter from "../common/Counter";
 
 const CartItem = (item) => {
-	const { image, name, price, qty } = item;
+	const { _id, image, name, price, qty } = item;
 
 	useLogger("CartItem -->");
-	const { increaseQty, decreaseQty } = useCart();
+	const { increaseQty, decreaseQty, clearItemFromCart } = useCart();
+	const handleClearFromCart = (e) => {
+		e.preventDefault();
+		clearItemFromCart(_id);
+	};
 
 	return (
 		<tbody>
 			<tr>
 				<td className="">
-					<button className="close" data-dismiss="alert" aria-label="Close">
+					<button
+						className="close"
+						data-dismiss="alert"
+						aria-label="Close"
+						onClick={handleClearFromCart}>
 						<span aria-hidden="true">×</span>
 					</button>
 					<span className="cartImage">

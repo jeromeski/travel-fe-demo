@@ -20,7 +20,8 @@ function Select({ initValFn: values, field, form, placeHolder }) {
 				<ComboboxInput
 					name={field.name}
 					placeholder={placeHolder}
-					className="months-search-input"
+					className="form-control"
+					style={{ height: "48px" }}
 					onBlur={() => {
 						form.setFieldTouched(field.name, true);
 					}}
