@@ -9,6 +9,7 @@ import "assets/vendors/fontawesome/css/all.css";
 import "@reach/combobox/styles.css";
 import "assets/styles.css";
 import CartProvider from "contexts/cart/cart.provider";
+import TourPackages from "pages/TourPackages";
 
 function App() {
 	return (
@@ -17,7 +18,8 @@ function App() {
 				<Header />
 
 				<main id="content" className="site-main">
-					<Route exact path="/" component={CheckoutPage} />
+					<Route exact path="/booking-cart" component={CheckoutPage} />
+					<Route exact path="/" component={TourPackages} />
 				</main>
 
 				<Footer />

@@ -4,7 +4,7 @@ import { useLogger } from "react-use";
 import Counter from "../common/Counter";
 
 const CartItem = (item) => {
-	const { _id, image, name, price, qty } = item;
+	const { image, name, price, qty } = item;
 
 	useLogger("CartItem -->");
 	const { increaseQty, decreaseQty } = useCart();

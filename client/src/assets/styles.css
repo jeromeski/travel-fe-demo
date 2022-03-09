@@ -1120,6 +1120,7 @@ input[type=submit]:focus {
 }
 
 .button-text {
+  background-color: transparent;
   color: #0791BE;
   font-weight: 600;
   position: relative;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useEffect } from "react/cjs/react.production.min";
+
 
 function Counter({ item, increment, decrement }) {
 	const [qty, setQty] = useState(1);

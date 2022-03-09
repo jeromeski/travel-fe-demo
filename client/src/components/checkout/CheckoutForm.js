@@ -9,7 +9,7 @@ import CustomForm from "./CustomForm";
 import { useLogger } from "react-use";
 import DialogModal from "components/ui/DialogModal";
 import Sidebar from "components/layout/Sidebar";
-import Widget from "components/Widget";
+import Widget from "components/ui/Widget";
 
 const { formId } = checkoutFormModel;
 const LOCAL_STORAGE_KEY = `travel:${formId}`;

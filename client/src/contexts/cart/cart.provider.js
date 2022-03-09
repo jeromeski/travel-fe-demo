@@ -2,8 +2,8 @@ import React, { createContext, useContext, useReducer, useMemo, useEffect } from
 import { useLocalStorage } from "react-use";
 
 import cartReducer, {
+	ADD_ITEM,
 	REMOVE_ITEM,
-	REMOVE_ITEM_OR_QUANTITY,
 	initialState,
 	INCREASE_QUANTITY,
 	DECREASE_QUANTITY
@@ -49,17 +49,17 @@ function CartProvider(props) {
 		});
 	};
 
-	const removeItemFromCart = (id) => {
-		dispatch({
-			type: REMOVE_ITEM_OR_QUANTITY,
-			id
-		});
-	};
-
 	const clearItemFromCart = (id) => {
 		dispatch({
 			type: REMOVE_ITEM,
 			id
+		});
+	};
+
+	const addItemToCart = (item) => {
+		dispatch({
+			type: ADD_ITEM,
+			item
 		});
 	};
 
@@ -72,7 +72,7 @@ function CartProvider(props) {
 			state,
 			increaseQty,
 			decreaseQty,
-			removeItemFromCart,
+			addItemToCart,
 			clearItemFromCart,
 			getItemFromCart,
 			isInCart
