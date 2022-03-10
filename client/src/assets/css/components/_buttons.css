@@ -80,6 +80,7 @@ input[type=submit]:focus {
 
 .outline-primary,
 .outline-round {
+  background-color: transparent;
   border: 2px solid #292929;
   color: #292929;
   display: inline-block;
@@ -108,6 +109,8 @@ input[type=submit]:focus {
 }
 
 .button-text {
+  background-color: transparent;
+  padding: 15px 30px;
   color: #0791BE;
   font-weight: 600;
   position: relative;
@@ -117,6 +120,8 @@ input[type=submit]:focus {
   -ms-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
+  outline: none;
+  border: none;
 }
 .button-text:hover, .button-text:focus, .button-text:active {
   color: #F56960;

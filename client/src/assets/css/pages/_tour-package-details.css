@@ -1,0 +1,393 @@
+/*--------------------------------------------------------------
+>>> Package detail Pages
+----------------------------------------------------------------*/
+.single-tour-section {
+  padding-bottom: 80px;
+}
+.single-tour-section .start-wrap {
+  display: inline-block;
+}
+.single-tour-section .rating-start:before {
+  font-weight: 400;
+}
+.single-tour-section .rating-start span:before {
+  color: #ffffff;
+}
+
+.single-tour-inner {
+  /* the parent */
+  /* item */
+}
+.single-tour-inner h2 {
+  margin-bottom: 35px;
+}
+.single-tour-inner .package-meta {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.single-tour-inner .package-meta ul li:before {
+  font-size: 20px;
+  color: #DDDDDD;
+  top: -2px;
+}
+@media screen and (min-width: 576px) {
+  .single-tour-inner .package-meta ul li {
+    font-size: 15px;
+    padding: 0 30px;
+  }
+}
+.single-tour-inner .tab-container {
+  margin-bottom: 50px;
+}
+.single-tour-inner .slick-slider {
+  overflow: hidden;
+}
+.single-tour-inner .slick-slider .slick-dots {
+  position: static;
+}
+.single-tour-inner .slick-slider .slick-dots li button {
+  height: 7px;
+  width: 7px;
+  padding: 0;
+}
+.single-tour-inner .slick-list {
+  margin: 0 -9px;
+}
+.single-tour-inner .single-tour-item {
+  padding: 0 9px;
+}
+
+/*---------------------------
+procduct details css
+----------------------------*/
+.nav-tabs {
+  margin: 0;
+}
+.nav-tabs .nav-link {
+  color: #272727;
+  border-radius: 0;
+  line-height: 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 20px 25px;
+}
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus, .nav-tabs .nav-link.active {
+  color: #F56960;
+}
+
+.tab-container {
+  margin-top: 50px;
+}
+@media screen and (max-width: 575px) {
+  .tab-container .nav {
+    display: block;
+  }
+  .tab-container .nav.nav-tabs a {
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: #dee2e6;
+    padding: 15px 20px;
+  }
+  .tab-container .nav.nav-tabs a:hover, .tab-container .nav.nav-tabs a:focus, .tab-container .nav.nav-tabs a.active {
+    background-color: #2C75BA;
+    color: #ffffff;
+  }
+}
+
+.tab-content {
+  padding: 30px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: #d4d4d4;
+}
+.tab-content ul {
+  margin: 30px 0 0;
+  padding: 0;
+}
+.tab-content ul li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 575px) {
+  .tab-content {
+    padding: 20px;
+  }
+}
+
+.itinerary-content {
+  margin-bottom: 30px;
+}
+.itinerary-content span {
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 300;
+  margin-left: 8px;
+}
+
+.itinerary-timeline-wrap .day-count {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.itinerary-timeline-wrap .day-count {
+  background-color: #F56960;
+  color: #ffffff;
+  border-radius: 100%;
+  height: 40px;
+  line-height: 1;
+  width: 40px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.itinerary-timeline-wrap .day-count span {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+.itinerary-timeline-wrap ul {
+  margin: 0;
+  padding: 0;
+}
+.itinerary-timeline-wrap ul li {
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 20px;
+}
+.itinerary-timeline-wrap ul li:last-child {
+  margin-bottom: 0;
+}
+.itinerary-timeline-wrap .timeline-content {
+  background-color: #f9f9f9;
+  padding: 25px;
+  position: relative;
+}
+.itinerary-timeline-wrap .timeline-content p:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 576px) {
+  .itinerary-timeline-wrap .day-count {
+    background-color: #F56960;
+    color: #ffffff;
+    border-radius: 100%;
+    height: 60px;
+    margin-bottom: 0;
+    line-height: 1;
+    width: 60px;
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    left: -24px;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+  .itinerary-timeline-wrap .day-count span {
+    font-size: 23px;
+  }
+  .itinerary-timeline-wrap .timeline-content {
+    margin-left: 24px;
+    padding: 25px 25px 25px 50px;
+  }
+}
+
+.summary-review {
+  background-color: #f9f9f9;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+.summary-review .review-score span {
+  background-color: #fff;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 50%;
+  width: 90px;
+  display: block;
+  height: 90px;
+  margin: auto;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 88px;
+  text-align: center;
+}
+.summary-review .review-score-content {
+  margin-left: 20px;
+}
+.summary-review .review-score-content p:last-child {
+  margin-bottom: 0;
+}
+.summary-review .review-score-content span {
+  color: #999;
+  font-size: 18px;
+  font-weight: 300;
+}
+@media screen and (max-width: 575px) {
+  .summary-review {
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+  }
+  .summary-review .review-score {
+    margin-bottom: 20px;
+  }
+}
+
+.single-tour-inner .rating-start {
+  display: inline-block;
+  font-size: 13px;
+}
+.single-tour-inner .rating-start span:before {
+  color: #656565;
+}
+
+.single-tour-gallery h3 {
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.sidebar .package-price {
+  background-color: #F56960;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.sidebar .package-price .price {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+.sidebar .package-price .price span {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+.sidebar .package-price .rating-start:before {
+  color: #ffffff;
+}
+.sidebar .map-area {
+  margin-bottom: 50px;
+}
+.sidebar .information-content {
+  background-color: #f8f8f8;
+  padding: 50px 30px;
+  margin-bottom: 50px;
+}
+.sidebar .information-content .button-primary {
+  margin-top: 20px;
+}
+.sidebar .information-content h5,
+.sidebar .travel-package-content h5 {
+  color: #F56960;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 22px;
+  display: inline-block;
+  text-transform: uppercase;
+  padding-left: 60px;
+  position: relative;
+}
+.sidebar .information-content h5:before,
+.sidebar .travel-package-content h5:before {
+  background-color: #F56960;
+  content: "";
+  height: 2px;
+  width: 50px;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.sidebar .information-content h3,
+.sidebar .travel-package-content h3 {
+  text-transform: uppercase;
+}
+.sidebar .travel-package-content {
+  padding: 50px 30px;
+  position: relative;
+  z-index: 1;
+}
+.sidebar .travel-package-content:before {
+  background-color: #101F46;
+  opacity: 0.85;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.sidebar .travel-package-content h3,
+.sidebar .travel-package-content h5,
+.sidebar .travel-package-content p {
+  color: #ffffff;
+}
+.sidebar .travel-package-content h5:before {
+  background-color: #ffffff;
+}
+.sidebar .travel-package-content ul {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.sidebar .travel-package-content ul li {
+  list-style: none;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+.sidebar .travel-package-content ul li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.sidebar .travel-package-content ul li i {
+  margin-right: 8px;
+}
+.sidebar .travel-package-content ul li a {
+  color: #ffffff;
+  line-height: 1.3;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}

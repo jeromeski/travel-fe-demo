@@ -1,0 +1,303 @@
+/*--------------------------------------------------------------
+>>> form
+----------------------------------------------------------------*/
+form {
+  position: relative;
+}
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+input[type=search],
+input[type=number],
+input[type=tel],
+input[type=range],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=color] {
+  height: 48px;
+}
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+input[type=search],
+input[type=number],
+input[type=tel],
+input[type=range],
+input[type=date],
+input[type=month],
+input[type=week],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=color],
+textarea {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  font-size: 14px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+  padding: 0 10px;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=range]:focus,
+input[type=date]:focus,
+input[type=month]:focus,
+input[type=week]:focus,
+input[type=time]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=color]:focus,
+textarea:focus {
+  border-color: #F56960;
+  outline: 0;
+}
+input[type=text]:-webkit-autofill, input[type=text]:-webkit-autofill:hover, input[type=text]:-webkit-autofill:focus, input[type=text]:-webkit-autofill:active,
+input[type=email]:-webkit-autofill,
+input[type=email]:-webkit-autofill:hover,
+input[type=email]:-webkit-autofill:focus,
+input[type=email]:-webkit-autofill:active,
+input[type=url]:-webkit-autofill,
+input[type=url]:-webkit-autofill:hover,
+input[type=url]:-webkit-autofill:focus,
+input[type=url]:-webkit-autofill:active,
+input[type=password]:-webkit-autofill,
+input[type=password]:-webkit-autofill:hover,
+input[type=password]:-webkit-autofill:focus,
+input[type=password]:-webkit-autofill:active,
+input[type=search]:-webkit-autofill,
+input[type=search]:-webkit-autofill:hover,
+input[type=search]:-webkit-autofill:focus,
+input[type=search]:-webkit-autofill:active,
+input[type=number]:-webkit-autofill,
+input[type=number]:-webkit-autofill:hover,
+input[type=number]:-webkit-autofill:focus,
+input[type=number]:-webkit-autofill:active,
+input[type=tel]:-webkit-autofill,
+input[type=tel]:-webkit-autofill:hover,
+input[type=tel]:-webkit-autofill:focus,
+input[type=tel]:-webkit-autofill:active,
+input[type=range]:-webkit-autofill,
+input[type=range]:-webkit-autofill:hover,
+input[type=range]:-webkit-autofill:focus,
+input[type=range]:-webkit-autofill:active,
+input[type=date]:-webkit-autofill,
+input[type=date]:-webkit-autofill:hover,
+input[type=date]:-webkit-autofill:focus,
+input[type=date]:-webkit-autofill:active,
+input[type=month]:-webkit-autofill,
+input[type=month]:-webkit-autofill:hover,
+input[type=month]:-webkit-autofill:focus,
+input[type=month]:-webkit-autofill:active,
+input[type=week]:-webkit-autofill,
+input[type=week]:-webkit-autofill:hover,
+input[type=week]:-webkit-autofill:focus,
+input[type=week]:-webkit-autofill:active,
+input[type=time]:-webkit-autofill,
+input[type=time]:-webkit-autofill:hover,
+input[type=time]:-webkit-autofill:focus,
+input[type=time]:-webkit-autofill:active,
+input[type=datetime]:-webkit-autofill,
+input[type=datetime]:-webkit-autofill:hover,
+input[type=datetime]:-webkit-autofill:focus,
+input[type=datetime]:-webkit-autofill:active,
+input[type=datetime-local]:-webkit-autofill,
+input[type=datetime-local]:-webkit-autofill:hover,
+input[type=datetime-local]:-webkit-autofill:focus,
+input[type=datetime-local]:-webkit-autofill:active,
+input[type=color]:-webkit-autofill,
+input[type=color]:-webkit-autofill:hover,
+input[type=color]:-webkit-autofill:focus,
+input[type=color]:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-transition: background-color 50000s ease-in-out 0s, color 5000s ease-in-out 0s;
+  -moz-transition: background-color 50000s ease-in-out 0s, color 5000s ease-in-out 0s;
+  -ms-transition: background-color 50000s ease-in-out 0s, color 5000s ease-in-out 0s;
+  -o-transition: background-color 50000s ease-in-out 0s, color 5000s ease-in-out 0s;
+  transition: background-color 50000s ease-in-out 0s, color 5000s ease-in-out 0s;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+textarea {
+  padding: 20px 10px;
+  width: 100%;
+}
+
+select {
+  border: 1px solid #d9d9d9;
+  color: #383838;
+  height: 48px;
+  padding: 0 30px 0 10px;
+}
+select option {
+  padding: 8px;
+}
+select:focus {
+  outline: none;
+}
+
+form label {
+  font-weight: normal;
+}
+
+.search-form {
+  position: relative;
+}
+.search-form input {
+  width: 100%;
+  padding: 0 55px 0 10px;
+}
+.search-form button {
+  background-color: #F56960;
+  color: #ffffff;
+  font-size: 15px;
+  border: none;
+  position: absolute;
+  right: 4px;
+  top: 3px;
+  padding: 13px;
+  -webkit-transition: background-color 0.4s;
+  -moz-transition: background-color 0.4s;
+  -ms-transition: background-color 0.4s;
+  -o-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+.search-form button:hover {
+  background-color: #2C75BA;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group select {
+  height: 48px;
+}
+.form-group select,
+.form-group input:not([type=checkbox]):not([type=radio]):not([type=submit]) {
+  width: 100%;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+}
+.form-group label {
+  display: block;
+  color: #383838;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.form-group label.checkbox-list {
+  position: relative;
+  padding-left: 30px;
+}
+.form-group label .custom-checkbox {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #e6e6e6;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+.form-group label .custom-checkbox:before {
+  background-color: #F56960;
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  font-weight: 900;
+  font-size: 10px;
+  color: #fff;
+  text-align: center;
+}
+.form-group label input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  z-index: -9;
+}
+.form-group label input:checked ~ .custom-checkbox {
+  border-color: #F56960;
+}
+.form-group label input:checked ~ .custom-checkbox:before {
+  opacity: 1;
+}
+
+.custom-radio-field {
+  position: relative;
+  padding-left: 30px;
+}
+.custom-radio-field .radio-field {
+  display: inline-block;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e6e6e6;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+.custom-radio-field .radio-field:before {
+  background-color: #999;
+  border-radius: 100%;
+  content: "";
+  color: #ffffff;
+  font-family: "Font Awesome 5 Free";
+  font-size: 8px;
+  font-weight: 900;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  line-height: 19px;
+  opacity: 0;
+  -webkit-transition: all 0.3s linear 0.1s;
+  -moz-transition: all 0.3s linear 0.1s;
+  -ms-transition: all 0.3s linear 0.1s;
+  -o-transition: all 0.3s linear 0.1s;
+  transition: all 0.3s linear 0.1s;
+}
+.custom-radio-field input[type=radio] {
+  opacity: 0;
+  position: absolute;
+  z-index: -9;
+}
+.custom-radio-field input:checked ~ .radio-field:before {
+  opacity: 1;
+}
+
+.trip-date-input {
+  position: relative;
+}
+.trip-date-input i {
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+}

@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------
+>>> Clearing
+----------------------------------------------------------------*/
+.clearfix:before, .clearfix:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.white-bg {
+  background-color: #ffffff;
+}
+
+.bg-light-grey {
+  background-color: #f8f8f8;
+}
+
+.primary-bg {
+  background-color: #F56960;
+}
+
+.secondary-bg {
+  background-color: #0791BE;
+}
+
+.pl-20 {
+  padding-left: 20px;
+}
+
+.pr-40 {
+  padding-right: 40px;
+}

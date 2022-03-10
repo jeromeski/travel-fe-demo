@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import RatingStars from "./common/RatingStars";
 
 function PackageCard(item) {
-	const { image, price, days, nights, maxCount, destination, name, reviews, rating } = item;
+	const { images, price, days, nights, maxCount, destination, name, slug, reviews, rating } = item;
 	const { addItemToCart } = useCart();
 	const history = useHistory();
 
@@ -14,12 +14,17 @@ function PackageCard(item) {
 		history.push("/checkout-flow");
 	};
 
+	const handleGoDetails = () => {
+		//
+		history.push(`/package/${slug}`);
+	};
+
 	return (
 		<div className="col-lg-4 col-md-6">
 			<div className="package-wrap">
 				<figure className="feature-image">
 					<a href="#">
-						<img src={require(`assets/images/${image}.jpg`)} alt="" />
+						<img src={require(`assets/images/${images[0]}.jpg`)} alt="" />
 					</a>
 				</figure>
 				<div className="package-price">
@@ -49,7 +54,7 @@ function PackageCard(item) {
 							<a href="#">{name}</a>
 						</h3>
 						<div className="review-area">
-							<span className="review-text">({reviews} reviews)</span>
+							<span className="review-text">({reviews.totalReviews} reviews)</span>
 							<RatingStars rating={rating} />
 						</div>
 						<p>
@@ -57,14 +62,14 @@ function PackageCard(item) {
 							tellus, luctus nec ullam elit tellpus.
 						</p>
 						<div className="btn-wrap">
-							<a href="#" className="button-text width-6" onClick={handleAddToCart}>
+							<button className="button-text width-6" onClick={handleGoDetails}>
 								Book Now
 								<i className="fas fa-arrow-right" />
-							</a>
-							<a href="#" className="button-text width-6">
+							</button>
+							<button href="#" className="button-text width-6">
 								Wish List
 								<i className="far fa-heart" />
-							</a>
+							</button>
 						</div>
 					</div>
 				</div>

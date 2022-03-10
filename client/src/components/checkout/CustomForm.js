@@ -8,9 +8,8 @@ import checkoutFormModel from "components/form-model/checkout-form-model";
 import _ from "lodash";
 import cards from "assets/images/cards.png";
 import ccv from "assets/images/icon_ccv.gif";
-import buttonStyles from "assets/components/button.module.css";
-import Button from 'components/ui/Button';
-import { Fragment } from 'react/cjs/react.development';
+import Button from "components/ui/Button";
+import { Fragment } from "react/cjs/react.development";
 
 const { formId, formField } = checkoutFormModel;
 
@@ -326,9 +325,9 @@ function CustomForm({ handleUpdateForm }) {
 				>
 					Back
 				</button>
-				<Button
+				<button
 					type="submit"
-					styleClassNames={buttonStyles["button-primary"]}
+					className="button-primary"
 					disabled={disabled}
 					// loading={isSubmitting}
 					children="Submit"

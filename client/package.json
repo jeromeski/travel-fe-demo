@@ -8,6 +8,7 @@
 		"@reach/checkbox": "^0.16.0",
 		"@reach/combobox": "^0.16.5",
 		"@reach/portal": "^0.16.2",
+		"@reach/tabs": "^0.16.4",
 		"axios": "0.26.0",
 		"axios-mock-adapter": "1.20.0",
 		"bootstrap": "^4.4.1",

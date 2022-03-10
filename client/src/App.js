@@ -7,9 +7,10 @@ import CheckoutPage from "pages/CheckoutPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "assets/vendors/fontawesome/css/all.css";
 import "@reach/combobox/styles.css";
-import "assets/styles.css";
+import "assets/css/styles.css";
 import CartProvider from "context/cart/cart.provider";
 import TourPackages from "pages/TourPackages";
+import TourPackageDetails from "pages/TourPackageDetails";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 				<main id="content" className="site-main">
 					<Route exact path="/checkout-flow" component={CheckoutPage} />
 					<Route exact path="/" component={TourPackages} />
+					<Route exact path="/package/:slug" component={TourPackageDetails} />
 				</main>
 
 				<Footer />
