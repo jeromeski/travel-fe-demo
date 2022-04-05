@@ -1,20 +1,20 @@
-import { useCart } from "context/cart/cart.provider";
+// import { useCart } from "context/cart/cart.provider";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import RatingStars from "./common/RatingStars";
 
 function PackageCard(item) {
 	const { images, price, days, nights, maxCount, destination, name, slug, reviews, rating } = item;
-	const { addItemToCart } = useCart();
+	// const { addItemToCart } = useCart();
 	const history = useHistory();
 
-	const handleAddToCart = (e) => {
-		e.preventDefault();
-		addItemToCart(item);
-		history.push("/checkout-flow");
-	};
+	// const handleAddToCart = (e) => {
+	// 	e.preventDefault();
+	// 	addItemToCart(item);
+	// 	history.push("/checkout-flow");
+	// };
 
-	const handleGoDetails = () => {
+	const handleGoPackageDetails = () => {
 		//
 		history.push(`/package/${slug}`);
 	};
@@ -62,7 +62,7 @@ function PackageCard(item) {
 							tellus, luctus nec ullam elit tellpus.
 						</p>
 						<div className="btn-wrap">
-							<button className="button-text width-6" onClick={handleGoDetails}>
+							<button className="button-text width-6" onClick={handleGoPackageDetails}>
 								Book Now
 								<i className="fas fa-arrow-right" />
 							</button>

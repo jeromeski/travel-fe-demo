@@ -1,0 +1,8 @@
+.slick-dots li button {
+  background-color: lightgray !important;
+
+}
+
+.slick-dots li.slick-active button {
+  background-color: #0791BE !important;
+}

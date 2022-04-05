@@ -1,0 +1,46 @@
+@import "@reach/tabs/styles.css";
+
+[data-reach-tabs] {
+  position: relative;
+}
+
+[data-reach-tab-list] {
+  background: white !important;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* [data-reach-tab-panels] {
+  
+} */
+
+/* styles all tabs */
+[data-reach-tab] {
+  padding: 1rem 1.5rem !important;
+  outline: none !important;
+  /* border-bottom-color: #fff !important; */
+  letter-spacing: 1.05px;
+  text-transform: uppercase;
+  z-index: 10;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: -2px;
+  
+}
+
+
+/* styles only the selected tab */
+[data-reach-tab][data-selected] {
+  background-color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dee2e6 #dee2e6 #fff !important;
+  border-bottom-color: #fff !important;
+  border-bottom-width: 2px;
+  color: #F56960;
+  padding: 1rem 1.5rem !important;
+  font-weight: bold !important;
+  letter-spacing: 1.05px;
+  text-transform: uppercase;
+  margin-bottom: -2px;
+  
+}
+

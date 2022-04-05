@@ -75,6 +75,8 @@
 @import './components/_buttons.css';
 @import "./components/_default.css";
 @import "./components/_pagination.css";
+@import "./components/_tabs.css";
+@import "./components/_gallery-slider.css";
 /* Layout */
 @import "./layout/_utilities.css";
 @import "./layout/_main-header.css";

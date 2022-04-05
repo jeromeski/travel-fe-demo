@@ -8,6 +8,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "assets/vendors/fontawesome/css/all.css";
 import "@reach/combobox/styles.css";
 import "assets/css/styles.css";
+// import "@reach/tabs/styles.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import CartProvider from "context/cart/cart.provider";
 import TourPackages from "pages/TourPackages";
 import TourPackageDetails from "pages/TourPackageDetails";

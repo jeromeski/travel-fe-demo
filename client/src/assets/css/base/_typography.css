@@ -160,18 +160,21 @@ h1 {
 }
 
 h2 {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 900;
+  letter-spacing: 1.25px;
 }
 
 h3 {
   font-size: 23px;
   font-weight: 700;
+  letter-spacing: 1.15px;
 }
 
 h4 {
   font-size: 18px;
   font-weight: 700;
+  letter-spacing: 1.15px;
 }
 
 h5 {
