@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import Footer from "components/layout/Footer";
 import Header from "components/layout/Header";
 import Layout from "components/layout/Layout";
@@ -34,12 +35,14 @@ function App() {
 	);
 }
 
+const queryClient = new QueryClient();
+
 export default function () {
 	return (
-		<CartProvider>
-			<App />
-		</CartProvider>
+		<QueryClientProvider client={queryClient}>
+			<CartProvider>
+				<App />
+			</CartProvider>
+		</QueryClientProvider>
 	);
 }
-
-

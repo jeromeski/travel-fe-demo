@@ -52,6 +52,7 @@ const packageItems = [
 		inStock: true,
 		sold: 25,
 		reviews: {
+			id: 0,
 			totalReviews: 24,
 			summaryScore: 4.9,
 			summaryRating: "Excellent",
@@ -60,6 +61,7 @@ const packageItems = [
 			totalComments: 3,
 			posts: [
 				{
+					id: 0,
 					author: "Tom Sawyer",
 					authorThumb: "img20",
 					postedOn: "Jan 10 2020",
@@ -68,18 +70,21 @@ const packageItems = [
 						"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
 					comments: [
 						{
-							commentAuthor: "John Doe",
-							commentAuthorRating: 4,
-							commentContent:
+							id: 0,
+							author: "John Doe",
+							authorThumb: "img20",
+							postRating: 4,
+							postContent:
 								"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
-							commentPostedOn: "Jan 10 2020"
+							postedOn: "Jan 10 2020"
 						}
 					]
 				},
 				{
+					id: 1,
 					author: "Jana Smith",
 					authorThumb: "img20",
-					postedOn: "Jan 10 2020",
+					postedOn: "Feb 20 2020",
 					postRating: 3.5,
 					postContent:
 						"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
@@ -87,8 +92,7 @@ const packageItems = [
 				}
 			]
 		},
-		location:
-			"https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed",
+		location: "https://maps.google.com/maps?q=Italy%20Rome&t=&z=13&ie=UTF8&iwloc=&output=embed",
 		rating: 3.5
 	},
 	{
@@ -152,6 +156,7 @@ const packageItems = [
 			totalComments: 3,
 			posts: [
 				{
+					id: 0,
 					author: "King Mathers",
 					authorThumb: "img20",
 					postedOn: "Jan 10 2020",
@@ -160,15 +165,18 @@ const packageItems = [
 						"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
 					comments: [
 						{
-							commentAuthor: "Laney Bermúdez",
-							commentAuthorRating: 3.5,
-							commentContent:
+							id: 0,
+							author: "Laney Bermúdez",
+							authorThumb: "img20",
+							postRating: 3.5,
+							postContent:
 								"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
-							commentPostedOn: "Jan 10 2020"
+							postedOn: "Jan 10 2020"
 						}
 					]
 				},
 				{
+					id: 1,
 					author: "Sonja Noguera",
 					authorThumb: "img20",
 					postedOn: "Jan 10 2020",
@@ -180,7 +188,7 @@ const packageItems = [
 			]
 		},
 		location:
-			"https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed",
+			"https://maps.google.com/maps?q=Canada,%20Calgary&t=&z=13&ie=UTF8&iwloc=&output=embed",
 		rating: 4.5
 	},
 	{
@@ -244,6 +252,7 @@ const packageItems = [
 			totalComments: 3,
 			posts: [
 				{
+					id: 0,
 					author: "Barry Amador",
 					authorThumb: "img20",
 					postedOn: "Feb 20 2020",
@@ -252,15 +261,18 @@ const packageItems = [
 						"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
 					comments: [
 						{
-							commentAuthor: "Shauna Hawking",
-							commentAuthorRating: 4.5,
-							commentContent:
+							id: 0,
+							author: "Shauna Hawking",
+							authorThumb: "img20",
+							postRating: 4.5,
+							postContent:
 								"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
-							commentPostedOn: "Jan 10 2020"
+							postedOn: "Jan 10 2020"
 						}
 					]
 				},
 				{
+					id: 1,
 					author: "Tatianna Vargas",
 					authorThumb: "img20",
 					postedOn: "Jan 10 2020",
@@ -272,7 +284,7 @@ const packageItems = [
 			]
 		},
 		location:
-			"https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed",
+			"https://maps.google.com/maps?q=Portugal,%20Lisbon&t=&z=13&ie=UTF8&iwloc=&output=embed",
 		rating: 4.5
 	},
 	{
@@ -336,6 +348,7 @@ const packageItems = [
 			totalComments: 3,
 			posts: [
 				{
+					id: 0,
 					author: "Stefan Van der Hout",
 					authorThumb: "img20",
 					postedOn: "Feb 20 2020",
@@ -344,15 +357,18 @@ const packageItems = [
 						"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
 					comments: [
 						{
-							commentAuthor: "Laurens Willey",
-							commentAuthorRating: 4.5,
-							commentContent:
+							id: 0,
+							author: "Laurens Willey",
+							authorThumb: "img20",
+							authorRating: 4.5,
+							postContent:
 								"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
-							commentPostedOn: "Jan 10 2020"
+							postedOn: "Jan 10 2020"
 						}
 					]
 				},
 				{
+					id: 1,
 					author: "Ruby Rake",
 					authorThumb: "img20",
 					postedOn: "June 06 2020",
@@ -364,7 +380,7 @@ const packageItems = [
 			]
 		},
 		location:
-			"https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed",
+			"https://maps.google.com/maps?q=Mexico,%20Basilica%20of%20Guadalupe&t=&z=13&ie=UTF8&iwloc=&output=embed",
 		rating: 4.0
 	},
 	{
@@ -428,6 +444,7 @@ const packageItems = [
 			totalComments: 3,
 			posts: [
 				{
+					id: 0,
 					author: "Wioletta Haines",
 					authorThumb: "img20",
 					postedOn: "Feb 20 2020",
@@ -436,15 +453,17 @@ const packageItems = [
 						"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
 					comments: [
 						{
-							commentAuthor: "Merideth Brooke",
-							commentAuthorRating: 4.5,
-							commentContent:
+							id: 0,
+							author: "Merideth Brooke",
+							authorRating: 4.5,
+							postContent:
 								"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
-							commentPostedOn: "Jan 10 2020"
+							postedOn: "Jan 10 2020"
 						}
 					]
 				},
 				{
+					id: 1,
 					author: "Dyson Prieto",
 					authorThumb: "img20",
 					postedOn: "May 10 2021",
@@ -455,8 +474,7 @@ const packageItems = [
 				}
 			]
 		},
-		location:
-			"https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed",
+		location: "https://maps.google.com/maps?q=Mexico,%20Uxmal&t=&z=9&ie=UTF8&iwloc=&output=embed",
 		rating: 3.75
 	},
 	{
@@ -520,6 +538,7 @@ const packageItems = [
 			totalComments: 3,
 			posts: [
 				{
+					id: 0,
 					author: "Wallace Antúnez",
 					authorThumb: "img20",
 					postedOn: "Feb 20 2020",
@@ -528,15 +547,17 @@ const packageItems = [
 						"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
 					comments: [
 						{
-							commentAuthor: "Maitland Sharp",
-							commentAuthorRating: 4.5,
-							commentContent:
+							id: 0,
+							author: "Maitland Sharp",
+							authorRating: 4.5,
+							postContent:
 								"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
-							commentPostedOn: "Jan 10 2020"
+							postedOn: "Jan 10 2020"
 						}
 					]
 				},
 				{
+					id: 1,
 					author: "Virgilio Jackson",
 					authorThumb: "img20",
 					postedOn: "April 09 2021",
@@ -548,49 +569,265 @@ const packageItems = [
 			]
 		},
 		location:
-			"https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed",
+			"https://maps.google.com/maps?q=philippines,%20mayon&t=&z=11&ie=UTF8&iwloc=&output=embed",
 		rating: 5.0
 	}
 ];
 
 export default packageItems;
 
-const itemReviews = {
-	totalReviews: 24,
-	summaryScore: 4.9,
-	summaryRating: "Excellent",
-	summaryLead:
-		"Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
-	totalComments: 3,
-	posts: [
-		{
-			author: "Tom Sawyer",
-			authorThumb: "img20",
-			postedOn: "Jan 10 2020",
-			postRating: 4.5,
-			postContent:
-				"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
-			comments: [
-				{
-					commentAuthor: "John Doe",
-					commentAuthorRating: 4,
-					commentContent:
-						"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
-					commentPostedOn: "Jan 10 2020"
-				}
-			]
-		},
-		{
-			author: "Jana Smith",
-			authorThumb: "img20",
-			postedOn: "Jan 10 2020",
-			postRating: 3.5,
-			postContent:
-				"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
-			comments: []
-		}
-	]
-};
+const packageReviews = [
+	{
+		id: 0,
+		slug: "experience-the-natural-beauty-of-island",
+		totalReviews: 24,
+		summaryScore: 4.9,
+		summaryRating: "Excellent",
+		summaryLead:
+			"Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+		totalComments: 3,
+		posts: [
+			{
+				id: 0,
+				author: "Tom Sawyer",
+				authorThumb: "img20",
+				postedOn: "Oct 25, 2021",
+				postRating: 4.5,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: [
+					{
+						id: 0,
+						author: "John Doe",
+						authorThumb: "img20",
+						postRating: 4,
+						postContent:
+							"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+						postedOn: "Dec 11, 2021"
+					}
+				]
+			},
+			{
+				id: 1,
+				author: "Jana Smith",
+				authorThumb: "img20",
+				postedOn: "Feb 20 2022",
+				postRating: 3.5,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: []
+			}
+		]
+	},
+	{
+		id: 1,
+		slug: "sunset-view-of-beautiful-lakeside-resident",
+		totalReviews: 20,
+		summaryScore: 4.5,
+		summaryRating: "Excellent",
+		summaryLead:
+			"Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+		totalComments: 3,
+		posts: [
+			{
+				id: 0,
+				author: "King Mathers",
+				authorThumb: "img20",
+				postedOn: "Jan 10 2020",
+				postRating: 4,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: [
+					{
+						id: 0,
+						author: "Laney Bermúdez",
+						authorThumb: "img20",
+						postRating: 3.5,
+						postContent:
+							"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+						postedOn: "Jan 10 2020"
+					}
+				]
+			},
+			{
+				id: 1,
+				author: "Sonja Noguera",
+				authorThumb: "img20",
+				postedOn: "Jan 10 2020",
+				postRating: 4.5,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: []
+			}
+		]
+	},
+	{
+		id: 2,
+		slug: "vacation-to-the-water-city-of-portugal",
+		totalReviews: 22,
+		summaryScore: 4.9,
+		summaryRating: "Very Good",
+		summaryLead:
+			"Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+		totalComments: 3,
+		posts: [
+			{
+				id: 0,
+				author: "Barry Amador",
+				authorThumb: "img20",
+				postedOn: "Mar 27, 2021",
+				postRating: 4.5,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: [
+					{
+						id: 0,
+						author: "Shauna Hawking",
+						authorThumb: "img20",
+						postRating: 4.5,
+						postContent:
+							"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+						postedOn: "Aug 12, 2021"
+					}
+				]
+			},
+			{
+				id: 1,
+				author: "Tatianna Vargas",
+				authorThumb: "img20",
+				postedOn: "Jun 14, 2021",
+				postRating: 3.75,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: []
+			}
+		]
+	},
+	{
+		id: 3,
+		slug: "beautiful-season-of-the-rural-village",
+		totalReviews: 22,
+		summaryScore: 4.9,
+		summaryRating: "Excellent",
+		summaryLead:
+			"Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+		totalComments: 3,
+		posts: [
+			{
+				id: 0,
+				author: "Stefan Van der Hout",
+				authorThumb: "img20",
+				postedOn: "Mar 08, 2021",
+				postRating: 4.5,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: [
+					{
+						id: 0,
+						author: "Laurens Willey",
+						authorThumb: "img20",
+						authorRating: 4.5,
+						postContent:
+							"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+						postedOn: "Jul 31, 2021"
+					}
+				]
+			},
+			{
+				id: 1,
+				author: "Ruby Rake",
+				authorThumb: "img20",
+				postedOn: "Nov 02, 2021",
+				postRating: 3.75,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: []
+			}
+		]
+	},
+	{
+		id: 4,
+		slug: "trekking-to-the-base-camp-of-mountain",
+		totalReviews: 19,
+		summaryScore: 4.5,
+		summaryRating: "Excellent",
+		summaryLead:
+			"Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+		totalComments: 3,
+		posts: [
+			{
+				id: 0,
+				author: "Wioletta Haines",
+				authorThumb: "img20",
+				postedOn: "Feb 20 2020",
+				postRating: 4.5,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: [
+					{
+						id: 0,
+						author: "Merideth Brooke",
+						authorRating: 4.5,
+						postContent:
+							"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+						postedOn: "Jan 10 2020"
+					}
+				]
+			},
+			{
+				id: 1,
+				author: "Dyson Prieto",
+				authorThumb: "img20",
+				postedOn: "May 10 2021",
+				postRating: 4.0,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: []
+			}
+		]
+	},
+	{
+		_id: 5,
+		slug: "summer-holiday-to-the-davao-river",
+		totalReviews: 19,
+		summaryScore: 4.5,
+		summaryRating: "Excellent",
+		summaryLead:
+			"Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+		totalComments: 3,
+		posts: [
+			{
+				id: 0,
+				author: "Wallace Antúnez",
+				authorThumb: "img20",
+				postedOn: "Feb 20 2020",
+				postRating: 4.5,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: [
+					{
+						id: 0,
+						author: "Maitland Sharp",
+						authorRating: 4.5,
+						postContent:
+							"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+						postedOn: "Jan 10 2020"
+					}
+				]
+			},
+			{
+				id: 1,
+				author: "Virgilio Jackson",
+				authorThumb: "img20",
+				postedOn: "April 09 2021",
+				postRating: 4.0,
+				postContent:
+					"Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+				comments: []
+			}
+		]
+	}
+];
 
 const itemLocation = () => (
 	<div className="mapouter">
@@ -610,58 +847,3 @@ const itemLocation = () => (
 	</div>
 );
 
-const itemData = {
-	_id: 0,
-	name: "Experience the natural beauty of island",
-	price: 1900.0,
-	qty: 0,
-	images: ["img5", "img6", "img7", "img8", "img9"],
-	days: 7,
-	nights: 6,
-	maxCount: 5,
-	destination: "Italy",
-	description1:
-		"Occaecat pariatur! Quaerat ligula, ab, consequuntur orci mus ultriciespraesent aute blandit beatae nisl aut, totam mauris rhoncus Tellus netus fringilla auctor dui. Dolores excepteur, doloribus, blanditiis aliquip nisl. Occaecat iusto? Provident sociis rerum. Amet, asperiores molestie varius eos! Libero, fermentum fermentum totam! Sunt praesentium, totam. Excepteur platea nisl. Convallis aliquam? Iaculis erat ipsa molestie, quod, vestibulum reiciendis, maxime nostra, integer unde officiis quo integer unde officiis quo.",
-	description2:
-		"Occaecat pariatur! Quaerat ligula, ab, consequuntur orci mus ultricies praesent aute blandit beatae nisl aut, totam mauris rhoncus? Tellus netus fringilla class auctor dui. Dolores excepteur, doloribus, blanditiis aliquip nisl..",
-	rules: [
-		"- Travel cancellation insurance",
-		"- Breakfast and dinner included",
-		"- Health care included",
-		"- Transfer to the airport and return to the agency",
-		"- Lorem ipsum dolor sit amet, consectetur adipiscing"
-	],
-	itineraryDescription:
-		"Dolores maiores dicta dolore. Natoque placeat libero sunt sagittis debitis?Egestas non non qui quos, semper aperiam lacinia eum nam! Pede beatae.Soluta, convallis irure accusamus voluptatum ornare saepe cupidatat.",
-	itineraryTimeline: [
-		{
-			id: 0,
-			dayCount: 1,
-			title: "Ancient Rome Visit",
-			desc: "Nostra semper ultricies eu leo eros orci porta provident, fugit? Pariatur interdum assumenda, qui aliquip ipsa! Dictum natus potenti pretium."
-		},
-		{
-			id: 1,
-			dayCount: 2,
-			title: "Classic Rome Sightseeing",
-			desc: "Nostra semper ultricies eu leo eros orci porta provident, fugit? Pariatur interdum assumenda, qui aliquip ipsa! Dictum natus potenti pretium."
-		},
-		{
-			id: 2,
-			dayCount: 3,
-			title: "Vatican City Visit",
-			desc: "Nostra semper ultricies eu leo eros orci porta provident, fugit? Pariatur interdum assumenda, qui aliquip ipsa! Dictum natus potenti pretium."
-		},
-		{
-			id: 3,
-			dayCount: 4,
-			title: "Italian Food Tour",
-			desc: "Nostra semper ultricies eu leo eros orci porta provident, fugit? Pariatur interdum assumenda, qui aliquip ipsa! Dictum natus potenti pretium."
-		}
-	],
-	inStock: true,
-	sold: 25,
-	reviews: itemReviews,
-	location: itemLocation,
-	rating: 3.5
-};

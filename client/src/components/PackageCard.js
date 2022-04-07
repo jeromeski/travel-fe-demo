@@ -24,7 +24,7 @@ function PackageCard(item) {
 			<div className="package-wrap">
 				<figure className="feature-image">
 					<a href="#">
-						<img src={require(`assets/images/${images[0]}.jpg`)} alt="" />
+						<img src={require(`assets/images/img5.jpg`)} alt="" />
 					</a>
 				</figure>
 				<div className="package-price">

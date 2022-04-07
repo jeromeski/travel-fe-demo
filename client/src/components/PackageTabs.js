@@ -1,8 +1,20 @@
 import React from "react";
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs";
+import ProgramContent from "./ProgramContent";
+import PackageReviews from "./PackageReviews";
+import PackageMap from "./PackageMap";
+import PackageDescription from "./PackageDescription";
 
 function PackageTabs({ data }) {
-	const { description1, description2, rules } = data;
+	const {
+		description1,
+		description2,
+		rules,
+		itineraryDescription,
+		itineraryTimeline,
+		days,
+		location
+	} = data;
 	return (
 		<Tabs className="tab-container">
 			<TabList>
@@ -21,18 +33,24 @@ function PackageTabs({ data }) {
 			</TabList>
 			<TabPanels className="tab-content">
 				<TabPanel className="overview-content">
-					<p>{description1}</p>
-					<p>{description2}</p>
-					{rules && rules.map((rule, idx) => <p key={idx}>{rule}</p>)}
+					<PackageDescription
+						description1={description1}
+						description2={description2}
+						rules={rules}
+					/>
 				</TabPanel>
 				<TabPanel>
-					<p>Program</p>
+					<ProgramContent
+						itineraryDescription={itineraryDescription}
+						itineraryTimeline={itineraryTimeline}
+						days={days}
+					/>
 				</TabPanel>
 				<TabPanel>
-					<p>Review</p>
+					<PackageReviews />
 				</TabPanel>
 				<TabPanel>
-					<p>Map</p>
+					<PackageMap location={location} />
 				</TabPanel>
 			</TabPanels>
 		</Tabs>

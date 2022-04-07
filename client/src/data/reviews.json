@@ -1,0 +1,230 @@
+{
+	"reviews": [
+		{
+			"id": 0,
+			"slug": "experience-the-natural-beauty-of-island",
+			"totalReviews": 24,
+			"summaryScore": 4.9,
+			"summaryRating": "Excellent",
+			"summaryLead": "Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+			"totalComments": 3,
+			"posts": [
+				{
+					"id": 0,
+					"author": "Tom Sawyer",
+					"authorThumb": "img20",
+					"postedOn": "Oct 25, 2021",
+					"postRating": 4.5,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": [
+						{
+							"id": 0,
+							"author": "John Doe",
+							"authorThumb": "img20",
+							"postRating": 4,
+							"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+							"postedOn": "Dec 11, 2021"
+						}
+					]
+				},
+				{
+					"id": 1,
+					"author": "Jada Smith",
+					"authorThumb": "img20",
+					"postedOn": "Feb 20 2022",
+					"postRating": 3.5,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": []
+				}
+			]
+		},
+		{
+			"id": 1,
+			"slug": "sunset-view-of-beautiful-lakeside-resident",
+			"totalReviews": 20,
+			"summaryScore": 4.5,
+			"summaryRating": "Excellent",
+			"summaryLead": "Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+			"totalComments": 3,
+			"posts": [
+				{
+					"id": 0,
+					"author": "King Mathers",
+					"authorThumb": "img20",
+					"postedOn": "Jan 10 2020",
+					"postRating": 4,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": [
+						{
+							"id": 0,
+							"author": "Laney Bermúdez",
+							"authorThumb": "img20",
+							"postRating": 3.5,
+							"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+							"postedOn": "Jan 10 2020"
+						}
+					]
+				},
+				{
+					"id": 1,
+					"author": "Sonja Noguera",
+					"authorThumb": "img20",
+					"postedOn": "Jan 10 2020",
+					"postRating": 4.5,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": []
+				}
+			]
+		},
+		{
+			"id": 2,
+			"slug": "vacation-to-the-water-city-of-portugal",
+			"totalReviews": 22,
+			"summaryScore": 4.9,
+			"summaryRating": "Very Good",
+			"summaryLead": "Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+			"totalComments": 3,
+			"posts": [
+				{
+					"id": 0,
+					"author": "Barry Amador",
+					"authorThumb": "img20",
+					"postedOn": "Mar 27, 2021",
+					"postRating": 4.5,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": [
+						{
+							"id": 0,
+							"author": "Shauna Hawking",
+							"authorThumb": "img20",
+							"postRating": 4.5,
+							"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+							"postedOn": "Aug 12, 2021"
+						}
+					]
+				},
+				{
+					"id": 1,
+					"author": "Tatianna Vargas",
+					"authorThumb": "img20",
+					"postedOn": "Jun 14, 2021",
+					"postRating": 3.75,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": []
+				}
+			]
+		},
+		{
+			"id": 3,
+			"slug": "beautiful-season-of-the-rural-village",
+			"totalReviews": 22,
+			"summaryScore": 4.9,
+			"summaryRating": "Excellent",
+			"summaryLead": "Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+			"totalComments": 3,
+			"posts": [
+				{
+					"id": 0,
+					"author": "Stefan Van der Hout",
+					"authorThumb": "img20",
+					"postedOn": "Mar 08, 2021",
+					"postRating": 4.5,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": [
+						{
+							"id": 0,
+							"author": "Laurens Willey",
+							"authorThumb": "img20",
+							"authorRating": 4.5,
+							"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+							"postedOn": "Jul 31, 2021"
+						}
+					]
+				},
+				{
+					"id": 1,
+					"author": "Ruby Rake",
+					"authorThumb": "img20",
+					"postedOn": "Nov 02, 2021",
+					"postRating": 3.75,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": []
+				}
+			]
+		},
+		{
+			"id": 4,
+			"slug": "trekking-to-the-base-camp-of-mountain",
+			"totalReviews": 19,
+			"summaryScore": 4.5,
+			"summaryRating": "Excellent",
+			"summaryLead": "Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+			"totalComments": 3,
+			"posts": [
+				{
+					"id": 0,
+					"author": "Wioletta Haines",
+					"authorThumb": "img20",
+					"postedOn": "Apr 24, 2021",
+					"postRating": 4.5,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": [
+						{
+							"id": 0,
+							"author": "Merideth Brooke",
+							"authorRating": 4.5,
+							"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+							"postedOn": "Aug 26, 2021"
+						}
+					]
+				},
+				{
+					"id": 1,
+					"author": "Dyson Prieto",
+					"authorThumb": "img20",
+					"postedOn": "Nov 07, 2021",
+					"postRating": 4.0,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": []
+				}
+			]
+		},
+		{
+			"id": 5,
+			"slug": "summer-holiday-to-the-davao-river",
+			"totalReviews": 19,
+			"summaryScore": 4.5,
+			"summaryRating": "Excellent",
+			"summaryLead": "Tincidunt iaculis pede mus lobortis hendrerit eveniet impedit aenean mauris qui, pharetra rem doloremque laboris euismod deserunt non, cupiditate, vestibulum.",
+			"totalComments": 3,
+			"posts": [
+				{
+					"id": 0,
+					"author": "Wallace Antúnez",
+					"authorThumb": "img20",
+					"postedOn": "Jun 05, 2021",
+					"postRating": 4.5,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": [
+						{
+							"id": 0,
+							"author": "Maitland Sharp",
+							"authorRating": 4.5,
+							"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+							"postedOn": "Sep 07, 2021"
+						}
+					]
+				},
+				{
+					"id": 1,
+					"author": "Virgilio Jackson",
+					"authorThumb": "img20",
+					"postedOn": "April 09 2021",
+					"postRating": 4.0,
+					"postContent": "Officia amet posuere voluptates, mollit montes eaque accusamus laboriosam quisque cupidatat dolor pariatur, pariatur auctor.",
+					"comments": []
+				}
+			]
+		}
+	]
+}

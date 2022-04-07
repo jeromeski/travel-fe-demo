@@ -2,6 +2,7 @@
 import * as Yup from "yup";
 // import moment from "moment";
 import checkoutFormModel from "./checkout-form-model";
+
 const {
 	formField: {
 		firstName,
@@ -26,8 +27,7 @@ const visaRegEx = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
 const emailRegEx =
 	/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-
-const validationSchema = Yup.object().shape({
+const checkoutValidationSchema = Yup.object().shape({
 	[firstName.name]: Yup.string().required(`${firstName.requiredErrorMsg}`),
 	[lastName.name]: Yup.string().required(`${lastName.requiredErrorMsg}`),
 	[email.name]: Yup.string()
@@ -105,4 +105,4 @@ const validationSchema = Yup.object().shape({
 		})
 });
 
-export default validationSchema;
+export default checkoutValidationSchema;
