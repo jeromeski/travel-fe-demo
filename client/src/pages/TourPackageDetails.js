@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PackageTabs from "components/PackageTabs";
-import packageItems from "data/package-items";
+
 import GallerySlider from "components/common/GallerySlider";
+import CheckoutCardForm from "components/checkout/CheckoutCardForm";
+import { useGetPackages } from "api/get-resources";
 
 function TourPackageDetails() {
-	const [packageData, setPackageData] = useState({});
+	const [packageData, setPackageData] = useState();
+	const { data, isLoading } = useGetPackages();
 	const { slug } = useParams();
+
 	useEffect(() => {
-		if (packageItems) {
-			const packageItem = packageItems.find((item) => item.slug === slug);
-			setPackageData(packageItem);
+		if (data) {
+			const targetPackage = data.packages.find((item) => item.slug === slug);
+			setPackageData(targetPackage);
 		}
-	}, [slug]);
+	}, [slug, data]);
+
+	if (isLoading || !packageData) {
+		return <h1>LOADING...</h1>;
+	}
 
 	return (
 		<div className="single-tour-section">
@@ -20,7 +28,7 @@ function TourPackageDetails() {
 				<div className="row">
 					<div className="col-lg-8">
 						<div className="single-tour-inner">
-							<h2>{packageData.name && packageData.name.toUpperCase()}</h2>
+							<h2>{packageData.name.toUpperCase()}</h2>
 							<figure className="feature-image">
 								<img src={require(`assets/images/img27.jpg`)} alt="" />
 								<div className="package-meta text-center">
@@ -63,81 +71,7 @@ function TourPackageDetails() {
 							</div>
 							<div className="widget-bg booking-form-wrap">
 								<h4 className="bg-title">Booking</h4>
-								<form className="booking-form">
-									<div className="row">
-										<div className="col-sm-12">
-											<div className="form-group">
-												<input name="name_booking" type="text" placeholder="Full Name" />
-											</div>
-										</div>
-										<div className="col-sm-12">
-											<div className="form-group">
-												<input name="email_booking" type="text" placeholder="Email" />
-											</div>
-										</div>
-										<div className="col-sm-12">
-											<div className="form-group">
-												<input name="phone_booking" type="text" placeholder="Number" />
-											</div>
-										</div>
-										<div className="col-sm-12">
-											<div className="form-group">
-												<input
-													className="input-date-picker"
-													type="text"
-													name="s"
-													autoComplete="off"
-													readOnly="readonly"
-													placeholder="Date"
-												/>
-											</div>
-										</div>
-										<div className="col-sm-12">
-											<h4 className="">Add Options</h4>
-										</div>
-										<div className="col-sm-6">
-											<div className="form-group">
-												<label className="checkbox-list">
-													<input type="checkbox" name="s" />
-													<span className="custom-checkbox" />
-													Tour guide
-												</label>
-											</div>
-										</div>
-										<div className="col-sm-6">
-											<div className="form-group">
-												<label className="checkbox-list">
-													<input type="checkbox" name="s" />
-													<span className="custom-checkbox" />
-													Insurance
-												</label>
-											</div>
-										</div>
-										<div className="col-sm-6">
-											<div className="form-group">
-												<label className="checkbox-list">
-													<input type="checkbox" name="s" />
-													<span className="custom-checkbox" />
-													Dinner
-												</label>
-											</div>
-										</div>
-										<div className="col-sm-6">
-											<div className="form-group">
-												<label className="checkbox-list">
-													<input type="checkbox" name="s" />
-													<span className="custom-checkbox" />
-													Bike rent
-												</label>
-											</div>
-										</div>
-										<div className="col-sm-12">
-											<div className="form-group submit-btn">
-												<input type="submit" name="submit" defaultValue="Boook Now" />
-											</div>
-										</div>
-									</div>
-								</form>
+								<CheckoutCardForm />
 							</div>
 							<div className="widget-bg information-content text-center">
 								<h5>TRAVEL TIPS</h5>

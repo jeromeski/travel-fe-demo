@@ -27,7 +27,6 @@ function CartProvider(props) {
 	const [savedCart, handleCart] = useLocalStorage(`travel:cart`, JSON.stringify(initialState));
 
 	const [state, dispatch] = useReducer(cartReducer, JSON.parse(savedCart));
-	console.log(state);
 
 	useEffect(() => {
 		handleCart(JSON.stringify(state));

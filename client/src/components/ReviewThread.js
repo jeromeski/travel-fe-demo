@@ -1,6 +1,13 @@
 import React from "react";
+import RatingStars from "./common/RatingStars";
 
-function ReviewThreadPost({ id, author, postedOn, postRating, postContent }) {
+function ReviewThreadPost(props) {
+	const { id, author, postedOn, postRating, postContent } = props;
+
+	const handleReply = () => {
+		//
+	};
+
 	return (
 		<li key={id}>
 			<figure className="comment-thumb">
@@ -10,42 +17,39 @@ function ReviewThreadPost({ id, author, postedOn, postRating, postContent }) {
 				<div className="comment-header">
 					<h5 className="author-name">{author}</h5>
 					<span className="post-on">{postedOn}</span>
-					<div className="rating-wrap">
-						<div className="rating-start" title={`Rated ${postRating} out of 5`}>
-							<span style={{ width: "90%" }} />
-						</div>
-					</div>
+					<div className="rating-wrap">{postRating && <RatingStars rating={postRating} />}</div>
 				</div>
 				<p>{postContent}</p>
-				<a href="#" className="reply">
+				<span href="#" className="reply" onClick={handleReply}>
 					<i className="fas fa-reply" />
 					Reply
-				</a>
+				</span>
 			</div>
 		</li>
 	);
 }
 
-function ReviewThread({ reviews }) {
+function ReviewThread({ posts }) {
 	return (
 		<ol>
-			{reviews.posts.map(({ id, comments, ...rest }) => {
-				if (comments.length < 1) {
-					return <ReviewThreadPost key={`ReviewPost:${id}`} {...rest} />;
-				}
-				return (
-					<div key={`ReviewPost:${id}`}>
-						<div>
-							<ReviewThreadPost {...rest} />;
-							<ol>
-								{comments.map(({ id, ...rest }) => (
-									<ReviewThreadPost key={`CommentPost:${id}`} {...rest} />
-								))}
-							</ol>
+			{posts &&
+				posts.map(({ id, comments, ...rest }) => {
+					if (!comments) {
+						return <ReviewThreadPost key={`ReviewPost:${id}`} {...rest} />;
+					}
+					return (
+						<div key={`ReviewPost:${id}`}>
+							<div>
+								<ReviewThreadPost {...rest} />;
+								<ol>
+									{comments.map(({ id, ...rest }) => (
+										<ReviewThreadPost key={`CommentPost:${id}`} {...rest} />
+									))}
+								</ol>
+							</div>
 						</div>
-					</div>
-				);
-			})}
+					);
+				})}
 		</ol>
 	);
 }

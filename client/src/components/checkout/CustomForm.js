@@ -78,7 +78,6 @@ function CustomForm({ handleUpdateForm }) {
 							type="email"
 							labelName={formField.email.label}
 							component={Input}
-							// placeHolder="Enter email"
 							formGroup={true}
 						/>
 					</div>

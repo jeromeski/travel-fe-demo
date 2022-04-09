@@ -30,6 +30,16 @@ export default {
 			requiredErrorMsg: "Phone is required",
 			invalidErrorMsg: "Invalid Phone Number"
 		},
+		startDate: {
+			name: "startDate",
+			label: "Start Date*",
+			requiredErrorMsg: "Start Date is required"
+		},
+		endDate: {
+			name: "endDate",
+			label: "End Date*",
+			requiredErrorMsg: "Start Date is required"
+		},
 		nameOnCard: {
 			name: "nameOnCard",
 			label: "Name on card*",

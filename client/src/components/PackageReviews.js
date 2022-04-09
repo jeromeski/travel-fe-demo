@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useGetReviews } from "api/reviews";
+import { useGetReviews } from "api/get-resources";
 
 import ReviewThread from "./ReviewThread";
 import ReviewForm from "./ui/ReviewForm";
@@ -38,7 +38,7 @@ function PackageReviews() {
 			<div className="comment-area">
 				<h3 className="comment-title">{reviews.posts.length} Reviews</h3>
 				<div className="comment-area-inner">
-					<ReviewThread reviews={reviews} />
+					{reviews.posts && <ReviewThread posts={reviews.posts} setReviews={setReviews} />}
 				</div>
 				<div className="comment-form-wrap">
 					<h3 className="comment-title">Leave a Review</h3>

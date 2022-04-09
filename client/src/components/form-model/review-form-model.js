@@ -2,20 +2,15 @@
 export default {
 	formId: "review",
 	formField: {
-		rating: {
-			name: "rating",
+		postRating: {
+			name: "postRating",
 			label: "Your Rating",
 			requiredErrorMsg: "Rating is required"
 		},
-		firstName: {
-			name: "firstName",
-			label: "First name",
-			requiredErrorMsg: "First name is required"
-		},
-		lastName: {
-			name: "lastName",
-			label: "Last name",
-			requiredErrorMsg: "Last name is required"
+		author: {
+			name: "author",
+			label: "Fullname",
+			requiredErrorMsg: "Fullname is required"
 		},
 		email: {
 			name: "email",
@@ -23,14 +18,8 @@ export default {
 			requiredErrorMsg: "Email is required",
 			invalidErrorMsg: "Invalid Email"
 		},
-		subject: {
-			name: "subject",
-			label: "Subject",
-			requiredErrorMsg: "Subject is required",
-			invalidErrorMsg: "Must be at least 2 characters or more."
-		},
-		review: {
-			name: "review",
+		postContent: {
+			name: "postContent",
 			label: "Review",
 			requiredErrorMsg: "Your review is required",
 			invalidErrorMsg: "Must be at least 2 characters or more."

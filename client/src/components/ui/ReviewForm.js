@@ -5,21 +5,28 @@ import _ from "lodash";
 import reviewFormModel from "components/form-model/review-form-model";
 import reviewValidationSchema from "components/form-model/review-validation-schema";
 import { Rating } from "react-simple-star-rating";
+import { format } from "date-fns";
 
-const { formId, formField } = reviewFormModel;
+const { formField } = reviewFormModel;
 
 const initialValues = {
-	rating: "",
-	firstName: "",
-	lastName: "",
+	id: "",
+	postRating: "",
+	author: "",
+	authorThumb: "img20",
 	email: "",
-	subject: "",
-	review: ""
+	postContent: "",
+	postedOn: ""
 };
 
-function ReviewForm() {
-	const handleSubmit = (values) => {
-		console.log(values);
+function ReviewForm({ setReviews }) {
+	const uuid = _.uniqueId("post_");
+	const date = format(Date.now(), "MMMM dd yyyy");
+	console.log(uuid, date);
+	const handleSubmit = (values, { resetForm }) => {
+		const newValues = { ...values, id: uuid, postedOn: date };
+		setReviews((prev) => ({ ...prev, posts: [...prev.posts, newValues] }));
+		resetForm();
 	};
 	return (
 		<Formik
@@ -33,7 +40,7 @@ function ReviewForm() {
 						<div className="full-width rate-wrap">
 							<label>Your rating</label>
 							<div>
-								<Field name={formField.rating.name}>
+								<Field name={formField.postRating.name}>
 									{({ form, field, meta }) => {
 										const handleRating = (rate) => {
 											form.setFieldValue(field.name, rate);
@@ -45,7 +52,6 @@ function ReviewForm() {
 													onClick={handleRating}
 													ratingValue={field.value}
 													size={24}
-													isHalf={true}
 													allowHover={false}
 													emptyIcon={<i className="far fa-star"></i>}
 													halfIcon={<i className="fa fa-star-half-alt"></i>}
@@ -66,18 +72,10 @@ function ReviewForm() {
 						<p className="text-danger">
 							<Field
 								type="text"
-								name={formField.firstName.name}
-								placeholder={formField.firstName.label}
+								name={formField.author.name}
+								placeholder={formField.author.label}
 							/>
-							<ErrorMessage name={formField.firstName.name} />
-						</p>
-						<p className="text-danger">
-							<Field
-								type="text"
-								name={formField.lastName.name}
-								placeholder={formField.lastName.label}
-							/>
-							<ErrorMessage name={formField.lastName.name} />
+							<ErrorMessage name={formField.author.name} />
 						</p>
 						<p className="text-danger">
 							<Field type="email" name={formField.email.name} placeholder={formField.email.label} />
@@ -85,20 +83,12 @@ function ReviewForm() {
 						</p>
 						<p className="text-danger">
 							<Field
-								type="text"
-								name={formField.subject.name}
-								placeholder={formField.subject.label}
-							/>
-							<ErrorMessage name={formField.subject.name} />
-						</p>
-						<p className="text-danger">
-							<Field
 								as="textarea"
-								name={formField.review.name}
+								name={formField.postContent.name}
 								rows={6}
 								placeholder="Your review"
 							/>
-							<ErrorMessage name={formField.review.name} />
+							<ErrorMessage name={formField.postContent.name} />
 						</p>
 						<p>
 							<input type="submit" disabled={!_.isEmpty(formik.errors)} />

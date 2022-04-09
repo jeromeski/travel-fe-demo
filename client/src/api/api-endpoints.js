@@ -1,3 +1,4 @@
 export const API_ENDPOINTS = {
-	REVIEWS: "/reviews"
+	REVIEWS: "/reviews",
+	PACKAGES: "/packages"
 };
