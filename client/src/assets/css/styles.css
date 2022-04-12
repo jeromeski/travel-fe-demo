@@ -78,6 +78,7 @@
 @import "./components/_tabs.css";
 @import "./components/_gallery-slider.css";
 @import "./components/_stars.css";
+@import "./components/_modal.css";
 /* Layout */
 @import "./layout/_utilities.css";
 @import "./layout/_main-header.css";

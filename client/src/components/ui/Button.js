@@ -1,8 +1,8 @@
 import React from "react";
 
-function Button({ styleClassNames, loading, disabled, children, type }) {
+function Button({ styleClassNames, loading, disabled, children, type, onClick }) {
 	return (
-		<button type={type} className={styleClassNames}>
+		<button type={type} className={styleClassNames} onClick={() => onClick()}>
 			{children}
 			{loading && (
 				<svg

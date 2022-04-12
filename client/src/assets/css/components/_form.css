@@ -301,3 +301,14 @@ form label {
   bottom: 15px;
   right: 10px;
 }
+
+
+/* COMMENT FORM */
+
+.comment-form {
+  position: relative;
+}
+
+.custom-exit-button {
+
+}

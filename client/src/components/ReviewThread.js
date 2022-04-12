@@ -1,33 +1,7 @@
 import React from "react";
-import RatingStars from "./common/RatingStars";
+import ReviewThreadPost from "./ReviewThreadPost";
 
-function ReviewThreadPost(props) {
-	const { id, author, postedOn, postRating, postContent } = props;
 
-	const handleReply = () => {
-		//
-	};
-
-	return (
-		<li key={id}>
-			<figure className="comment-thumb">
-				<img src={require(`assets/images/img20.jpg`)} alt="" />
-			</figure>
-			<div className="comment-content">
-				<div className="comment-header">
-					<h5 className="author-name">{author}</h5>
-					<span className="post-on">{postedOn}</span>
-					<div className="rating-wrap">{postRating && <RatingStars rating={postRating} />}</div>
-				</div>
-				<p>{postContent}</p>
-				<span href="#" className="reply" onClick={handleReply}>
-					<i className="fas fa-reply" />
-					Reply
-				</span>
-			</div>
-		</li>
-	);
-}
 
 function ReviewThread({ posts }) {
 	return (

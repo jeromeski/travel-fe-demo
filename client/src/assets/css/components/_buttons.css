@@ -126,3 +126,78 @@ input[type=submit]:focus {
 .button-text:hover, .button-text:focus, .button-text:active {
   color: #F56960;
 }
+
+.btn-circle.btn-sm {
+  width: 30px;
+  height: 30px;
+  padding: 5px 0px;
+  border-radius: 15px;
+  font-size: 8px;
+  text-align: center;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  outline: none;
+  border: 0;
+  background-color: #F56960;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+}
+.btn-circle.btn-md {
+  width: 50px;
+  height: 50px;
+  padding: 7px 10px;
+  border-radius: 25px;
+  font-size: 10px;
+  text-align: center;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.btn-large {
+  border: none;
+  background-color: #F56960;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 15px 30px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-small {
+  background-color: #F56960;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 5px 12px 6px;
+  display: inline-block;
+  line-height: 1.2;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  border: none;
+  cursor: pointer;
+}
+.btn-small i {
+  margin-right: 4px;
+  font-size: 12px;
+}
+.btn-small:hover {
+  background-color: #2C75BA;
+}
+
+.btn-small:focus {
+  outline: none;
+  border: none;
+}

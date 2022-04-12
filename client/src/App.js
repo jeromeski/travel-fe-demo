@@ -16,6 +16,8 @@ import "slick-carousel/slick/slick-theme.css";
 import CartProvider from "context/cart/cart.provider";
 import TourPackages from "pages/TourPackages";
 import TourPackageDetails from "pages/TourPackageDetails";
+import { ManagedUIContext } from "context/ui.context";
+import ManagedModal from "components/common/modal/ManagedModal";
 
 function App() {
 	return (
@@ -31,18 +33,20 @@ function App() {
 
 				<Footer />
 			</Layout>
+			<ManagedModal />
 		</BrowserRouter>
 	);
 }
 
 const queryClient = new QueryClient();
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default function () {
 	return (
 		<QueryClientProvider client={queryClient}>
-			<CartProvider>
+			<ManagedUIContext>
 				<App />
-			</CartProvider>
+			</ManagedUIContext>
 		</QueryClientProvider>
 	);
 }
