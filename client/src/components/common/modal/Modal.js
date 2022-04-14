@@ -6,7 +6,7 @@ import { useUI } from "context/ui.context";
 import useOnClickOutside from "hooks/use-click-outside";
 import { fadeInOut } from "utils/motion/fade-in-out";
 
-const Modal = ({ children, open, close }) => {
+const Modal = ({ children, open }) => {
 	const { closeModal } = useUI();
 	const modalRootRef = React.useRef();
 	const modalInnerRef = React.useRef();

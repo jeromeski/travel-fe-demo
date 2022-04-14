@@ -30,15 +30,31 @@ export default {
 			requiredErrorMsg: "Phone is required",
 			invalidErrorMsg: "Invalid Phone Number"
 		},
-		startDate: {
-			name: "startDate",
-			label: "Start Date*",
+		start: {
+			name: "start",
+			label: "Select Start Date*",
 			requiredErrorMsg: "Start Date is required"
 		},
-		endDate: {
-			name: "endDate",
-			label: "End Date*",
+		end: {
+			name: "end",
+			label: "Select End Date*",
 			requiredErrorMsg: "Start Date is required"
+		},
+		guide: {
+			name: "guide",
+			value: false
+		},
+		dinner: {
+			name: "dinner",
+			value: false
+		},
+		insurance: {
+			name: "insurance",
+			value: false
+		},
+		bikeRent: {
+			name: "bikeRent",
+			value: false
 		},
 		nameOnCard: {
 			name: "nameOnCard",

@@ -22,7 +22,6 @@ const initialValues = {
 function ReviewForm({ setReviews }) {
 	const uuid = _.uniqueId("post_");
 	const date = format(Date.now(), "MMMM dd yyyy");
-	console.log(uuid, date);
 	const handleSubmit = (values, { resetForm }) => {
 		const newValues = { ...values, id: uuid, postedOn: date };
 		setReviews((prev) => ({ ...prev, posts: [...prev.posts, newValues] }));
@@ -34,7 +33,6 @@ function ReviewForm({ setReviews }) {
 			validationSchema={reviewValidationSchema}
 			onSubmit={handleSubmit}>
 			{(formik) => {
-				console.log(formik);
 				return (
 					<Form className="comment-form">
 						<div className="full-width rate-wrap">

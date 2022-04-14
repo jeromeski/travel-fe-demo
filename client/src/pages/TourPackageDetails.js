@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PackageTabs from "components/PackageTabs";
-
+import RatingStars from "components/common/RatingStars";
 import GallerySlider from "components/common/GallerySlider";
 import CheckoutCardForm from "components/checkout/CheckoutCardForm";
 import { useGetPackages } from "api/get-resources";
@@ -22,6 +22,8 @@ function TourPackageDetails() {
 		return <h1>LOADING...</h1>;
 	}
 
+	console.log(packageData.rating);
+
 	return (
 		<div className="single-tour-section">
 			<div className="container">
@@ -30,7 +32,7 @@ function TourPackageDetails() {
 						<div className="single-tour-inner">
 							<h2>{packageData.name.toUpperCase()}</h2>
 							<figure className="feature-image">
-								<img src={require(`assets/images/img27.jpg`)} alt="" />
+								<img src={require(`assets/images/${packageData.images[7]}.jpg`)} alt="" />
 								<div className="package-meta text-center">
 									<ul>
 										<li>
@@ -61,17 +63,15 @@ function TourPackageDetails() {
 						<div className="sidebar">
 							<div className="package-price">
 								<h5 className="price">
-									<span>$649</span> / per person
+									<span>${packageData.price}</span> / per person
 								</h5>
 								<div className="start-wrap">
-									<div className="rating-start" title="Rated 5 out of 5">
-										<span style={{ width: "60%" }} />
-									</div>
+									<RatingStars rating={packageData.rating} />
 								</div>
 							</div>
 							<div className="widget-bg booking-form-wrap">
 								<h4 className="bg-title">Booking</h4>
-								<CheckoutCardForm />
+								<CheckoutCardForm data={packageData} />
 							</div>
 							<div className="widget-bg information-content text-center">
 								<h5>TRAVEL TIPS</h5>
