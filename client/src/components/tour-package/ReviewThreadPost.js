@@ -1,6 +1,6 @@
 import { useUI } from "context/ui.context";
-import RatingStars from "./common/RatingStars";
-import Button from "./ui/Button";
+import RatingStars from "../ui/RatingStars";
+import Button from "../ui/Button";
 
 function ReviewThreadPost(props) {
 	const { id, author, postedOn, postRating, postContent } = props;

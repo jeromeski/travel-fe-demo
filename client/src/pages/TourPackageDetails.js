@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import PackageTabs from "components/PackageTabs";
-import RatingStars from "components/common/RatingStars";
+import PackageTabs from "components/tour-package/PackageTabs";
+import RatingStars from "components/ui/RatingStars";
 import GallerySlider from "components/common/GallerySlider";
 import CheckoutCardForm from "components/checkout/CheckoutCardForm";
 import { useGetPackages } from "api/get-resources";

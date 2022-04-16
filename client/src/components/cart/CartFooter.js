@@ -14,7 +14,8 @@ function CartFooter() {
 				<strong>Vat</strong> <span>$ 18.00</span>
 			</li>
 			<li>
-				<strong>Grand Total</strong> <span className="grandTotal">$ {total * 1.18}</span>
+				<strong>Grand Total</strong>{" "}
+				<span className="grandTotal">$ {Math.round(total * 1.18)}</span>
 			</li>
 		</ul>
 	);

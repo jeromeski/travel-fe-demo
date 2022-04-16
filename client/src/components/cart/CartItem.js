@@ -1,7 +1,7 @@
 import { useCart } from "context/cart/cart.provider";
 import React from "react";
 import { useLogger } from "react-use";
-import Counter from "../common/Counter";
+import Counter from "../ui/Counter";
 
 const CartItem = (item) => {
 	const { _id, images, name, price, qty } = item;
@@ -26,7 +26,7 @@ const CartItem = (item) => {
 							<span aria-hidden="true">×</span>
 						</button>
 						<span className="cartImage">
-							<img src={require(`assets/images/${images[1]}.jpg`)} alt={name} />
+							<img src={require(`assets/images/${images[4]}.jpg`)} alt={name} />
 						</span>
 					</td>
 					<td data-column="Product Name">{name}</td>
@@ -39,7 +39,6 @@ const CartItem = (item) => {
 			</tbody>
 		);
 	}
-	 
 };
 
 export default CartItem;

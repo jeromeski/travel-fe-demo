@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useGetReviews } from "api/get-resources";
 
 import ReviewThread from "./ReviewThread";
-import ReviewForm from "./ui/ReviewForm";
+import ReviewForm from "../ui/ReviewForm";
 
 function PackageReviews() {
 	const [reviews, setReviews] = useState();

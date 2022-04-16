@@ -2,8 +2,8 @@ import React, { Fragment } from "react";
 import { Formik, ErrorMessage, Field, Form } from "formik";
 import _ from "lodash";
 // import CreateRating from "./CreateRating";
-import reviewFormModel from "components/form-model/review-form-model";
-import reviewValidationSchema from "components/form-model/review-validation-schema";
+import reviewFormModel from "form-model/review-form-model";
+import reviewValidationSchema from "form-model/review-validation-schema";
 import { Rating } from "react-simple-star-rating";
 import { format } from "date-fns";
 

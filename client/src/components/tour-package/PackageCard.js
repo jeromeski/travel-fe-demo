@@ -1,10 +1,10 @@
 // import { useCart } from "context/cart/cart.provider";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import RatingStars from "./common/RatingStars";
+import RatingStars from "../ui/RatingStars";
 
 function PackageCard(item) {
-  console.log(item);
+	console.log(item);
 	const { images, price, days, nights, maxCount, destination, name, slug, reviews, rating } = item;
 	// const { addItemToCart } = useCart();
 	const history = useHistory();
@@ -89,4 +89,4 @@ export default PackageCard;
 
 /*
 <img src={require(`assets/images/${images[5]}.jpg`)} alt="" />
-*/ 
+*/

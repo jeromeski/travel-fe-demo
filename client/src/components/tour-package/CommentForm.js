@@ -2,10 +2,10 @@ import React from "react";
 import { Formik, ErrorMessage, Field, Form } from "formik";
 import _ from "lodash";
 // import CreateRating from "./CreateRating";
-import reviewFormModel from "components/form-model/review-form-model";
-import reviewValidationSchema from "components/form-model/review-validation-schema";
+import reviewFormModel from "form-model/review-form-model";
+import reviewValidationSchema from "form-model/review-validation-schema";
 import { format } from "date-fns";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 import { useUI } from "context/ui.context";
 
 const { formField } = reviewFormModel;

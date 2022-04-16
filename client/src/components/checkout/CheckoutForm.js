@@ -1,8 +1,8 @@
 import { Formik } from "formik";
 import React, { Fragment } from "react";
-import INITIAL_VALUES from "components/form-model/form-initial-values";
-import checkoutFormModel from "components/form-model/checkout-form-model";
-import checkoutValidationSchema from "components/form-model/checkout-validation-schema";
+import INITIAL_VALUES from "form-model/form-initial-values";
+import checkoutFormModel from "form-model/checkout-form-model";
+import checkoutValidationSchema from "form-model/checkout-validation-schema";
 import useLocalStorageState from "hooks/useLocalStorageState";
 import { useDialog } from "context/dialog";
 import CustomForm from "./CustomForm";

@@ -4,7 +4,7 @@ import Select from "components/ui/Select";
 import { monthList, yearList } from "utils";
 import Input from "components/ui/Input";
 import { CountryDropdown } from "react-country-region-selector";
-import checkoutFormModel from "components/form-model/checkout-form-model";
+import checkoutFormModel from "form-model/checkout-form-model";
 import _ from "lodash";
 import cards from "assets/images/cards.png";
 import ccv from "assets/images/icon_ccv.gif";

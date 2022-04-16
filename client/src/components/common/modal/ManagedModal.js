@@ -1,4 +1,4 @@
-import CommentForm from "components/CommentForm";
+import CommentForm from "components/tour-package/CommentForm";
 import { useUI } from "../../../context/ui.context";
 
 import Modal from "./Modal";

@@ -1,6 +1,6 @@
 import DefaultSeo from "components/layout/DefaultSeo";
-import PackageCard from "components/PackageCard";
-import PageHeader from "components/ui/PageHeader";
+import PackageCard from "components/tour-package/PackageCard";
+import PageHeader from "components/common/PageHeader";
 import React, { Fragment, useEffect, useState } from "react";
 import { useGetPackages } from "api/get-resources";
 

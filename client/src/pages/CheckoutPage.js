@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import CheckoutContainer from "components/checkout/CheckoutContainer";
 import DefaultSeo from "components/layout/DefaultSeo";
-import PageHeader from "components/ui/PageHeader";
+import PageHeader from "components/common/PageHeader";
 
 function CheckoutPage() {
 	return (
