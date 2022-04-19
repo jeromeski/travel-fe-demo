@@ -1,3 +1,5 @@
+import CheckoutCallback from "components/checkout/CheckoutCallback";
+import CheckoutDialog from "components/checkout/CheckoutDialog";
 import CommentForm from "components/tour-package/CommentForm";
 import { useUI } from "../../../context/ui.context";
 
@@ -8,6 +10,8 @@ const ManagedModal = () => {
 	return (
 		<Modal open={displayModal} onClose={closeModal}>
 			{modalView === "COMMENT_VIEW" && <CommentForm />}
+			{modalView === "CHECKOUT_VIEW" && <CheckoutDialog />}
+			{modalView === "CALLBACK_VIEW" && <CheckoutCallback />}
 		</Modal>
 	);
 };

@@ -36,7 +36,6 @@ function CommentForm() {
 			validationSchema={reviewValidationSchema}
 			onSubmit={handleSubmit}>
 			{(formik) => {
-				console.log(formik);
 				return (
 					<div className="comment-form">
 						<div className="card" style={{ width: "30rem" }}>

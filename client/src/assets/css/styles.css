@@ -79,6 +79,8 @@
 @import "./components/_gallery-slider.css";
 @import "./components/_stars.css";
 @import "./components/_modal.css";
+@import "./components/_multi-step.css";
+@import "./components/_slider.css";
 /* Layout */
 @import "./layout/_utilities.css";
 @import "./layout/_main-header.css";
@@ -4937,8 +4939,8 @@ product checkout css
   content: "";
   width: 50%;
   height: 100%;
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
-  background: linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background: -webkit-linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%);
   -webkit-transform: skewX(-25deg);
   transform: skewX(-25deg);
 }

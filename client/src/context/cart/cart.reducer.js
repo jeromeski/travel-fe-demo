@@ -1,3 +1,4 @@
+import _ from "lodash";
 import {
 	calculateItemsSubTotalAmount,
 	calculateItemsTotalAmount,
@@ -10,6 +11,7 @@ export const DECREASE_QUANTITY = "DECREASE_QUANTITY";
 export const ADD_ITEM_TO_CART = "ADD_ITEM_TO_CART";
 export const REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART";
 export const RESET_CART = "RESET_CART";
+export const ADD_GUEST = "ADD_GUEST";
 
 export const initialState = {
 	items: [],
@@ -76,12 +78,19 @@ function cartReducer(state, action) {
 			const items = state.items.filter((item) => item._id !== action.id);
 			return generateFinalState(state, items);
 		}
+
+		case ADD_GUEST: {
+			return {
+				...state,
+				guest: action.guest
+			};
+		}
 		default:
 			return state;
 	}
 }
 
-const generateFinalState = (state, items) => {
+const generateFinalState = (state, items, guest) => {
 	const totalUniqueItems = calculateUniqueItems(items);
 	return {
 		...state,

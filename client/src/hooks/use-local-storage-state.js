@@ -7,14 +7,14 @@ function useLocalStorageState({ key, value }) {
 
 	const [localStorageState, setLocalStorageState] = useState(initialValue);
 
-	const handleUpdateLocalStorageState = useCallback(
+	const setInLocalStorage = useCallback(
 		(item) => {
 			setLocalStorageState(item);
 			localStorage.setItem(key, JSON.stringify(item));
 		},
 		[key]
 	);
-	return [localStorageState, handleUpdateLocalStorageState];
+	return [localStorageState, setInLocalStorage];
 }
 
 export default useLocalStorageState;

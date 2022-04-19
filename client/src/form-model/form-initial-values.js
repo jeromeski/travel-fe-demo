@@ -9,10 +9,6 @@ const {
 		phone,
 		start,
 		end,
-		guide,
-		dinner,
-		insurance,
-		bikeRent,
 		nameOnCard,
 		cardNumber,
 		expiryDate,
@@ -29,6 +25,7 @@ const {
 } = checkoutFormModel;
 
 const checkout = {
+	items: [],
 	[firstName.name]: "",
 	[lastName.name]: "",
 	[email.name]: "",
@@ -36,10 +33,6 @@ const checkout = {
 	[phone.name]: "",
 	[start.name]: "",
 	[end.name]: "",
-	[guide.name]: false,
-	[dinner.name]: false,
-	[insurance.name]: false,
-	[bikeRent.name]: false,
 	[nameOnCard.name]: "",
 	[cardNumber.name]: "",
 	[expiryDate.name]: { month: "", year: "" },

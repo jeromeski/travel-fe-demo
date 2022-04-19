@@ -39,10 +39,10 @@ const checkoutValidationSchema = Yup.object().shape({
 	[phone.name]: Yup.string()
 		.required("Phone number is required")
 		.test("len", `${phone.invalidErrorMsg}`, (val) => {
-			if (val && val.length > 9) {
+			if (val && val.length > 11) {
 				return false;
 			}
-			if (val && val.length < 9) {
+			if (val && val.length < 11) {
 				return false;
 			}
 			return true;

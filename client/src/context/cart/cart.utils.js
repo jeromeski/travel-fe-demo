@@ -24,8 +24,12 @@ export function calculateItemsSubTotalAmount(items) {
 	}));
 }
 
-export function calculateItemsTotalAmount(items) {
-	return items.reduce((total, item) => total + item.qty * item.price, 0);
+export function calculateItemsTotalAmount(items, guest) {
+	return items.reduce((total, item) => {
+		const addons = guest.bikeRent + guest.dinner + guest.insurance;
+    const newPrice = item.price + addons;
+		return total + item.qty * newPrice;
+	}, 0);
 }
 
 export function calculateItemsTotalQuantity(items) {

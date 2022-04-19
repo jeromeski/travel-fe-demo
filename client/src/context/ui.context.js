@@ -3,7 +3,8 @@ import CartProvider from "./cart/cart.provider";
 
 const INIT_STATE = {
 	displayModal: false,
-	modalView: "COMMENT_VIEW"
+	modalView: "COMMENT_VIEW",
+	currentIdx: 0
 };
 
 const UIContext = React.createContext();
@@ -31,6 +32,20 @@ const uiReducer = (state, action) => {
 			};
 		}
 
+		case "NEXT": {
+			return {
+				...state,
+				currentIdx: state.currentIdx + 1
+			};
+		}
+
+		case "PREV": {
+			return {
+				...state,
+				currentIdx: state.currentIdx - 1
+			};
+		}
+
 		default:
 			return state;
 	}
@@ -42,13 +57,17 @@ export const UIProvider = (props) => {
 	const openModal = () => dispatch({ type: "OPEN_MODAL" });
 	const closeModal = () => dispatch({ type: "CLOSE_MODAL" });
 	const setModalView = (view) => dispatch({ type: "SET_MODAL_VIEW", view });
+	const setNextIdx = () => dispatch({ type: "NEXT" });
+	const setPrevIdx = () => dispatch({ type: "PREV" });
 
 	const value = React.useMemo(
 		() => ({
 			...state,
 			openModal,
 			closeModal,
-			setModalView
+			setModalView,
+			setNextIdx,
+			setPrevIdx
 		}),
 		[state]
 	);

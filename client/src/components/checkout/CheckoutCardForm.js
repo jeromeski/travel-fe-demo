@@ -1,10 +1,17 @@
-import React, { Fragment } from "react";
+import React, { useEffect, Fragment } from "react";
 import { Formik, Field, ErrorMessage } from "formik";
 import Input from "components/ui/Input";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useCart } from "context/cart/cart.provider";
 import { useHistory } from "react-router-dom";
+import useLocalStorageState from "hooks/use-local-storage-state";
+import INITIAL_VALUES from "form-model/form-initial-values";
+import checkoutFormModel from "form-model/checkout-form-model";
+
+const { formId, formField } = checkoutFormModel;
+
+const LOCAL_STORAGE_KEY = "travel:checkout";
 
 function CheckoutCardForm({ data }) {
 	const today = new Date();
@@ -14,29 +21,26 @@ function CheckoutCardForm({ data }) {
 
 	const { addItemToCart } = useCart();
 
-	const history = useHistory();
+	const [paymentInfo, setInfoInLocalStorage] = useLocalStorageState({
+		key: LOCAL_STORAGE_KEY,
+		value: INITIAL_VALUES
+	});
 
-	const onSubmit = (values, formikProps) => {
+	const history = useHistory();
+	// useEffect(() => {
+	// 	setInfoInLocalStorage(INITIAL_VALUES);
+	// }, []);
+
+	console.log("CCF -->", paymentInfo);
+
+	const onSubmit = async (values, formikProps) => {
 		addItemToCart(data);
+		await setInfoInLocalStorage(values);
 		history.push("/checkout-flow");
 	};
 
 	return (
-		<Formik
-			initialValues={{
-				firstName: "",
-				lastName: "",
-				email: "",
-				phone: "",
-				start: "",
-				end: "",
-				guide: false,
-				dinner: false,
-				insurance: false,
-				bikeRent: false
-			}}
-			// validationSchema={checkoutValidationSchema}
-			onSubmit={onSubmit}>
+		<Formik initialValues={paymentInfo} onSubmit={onSubmit}>
 			{(formik) => {
 				return (
 					<form
@@ -90,7 +94,7 @@ function CheckoutCardForm({ data }) {
 											return (
 												<Fragment>
 													<DatePicker
-														selected={field.value}
+														selected={Date.parse(field.value)}
 														onChange={handleStartDateChange}
 														minDate={today}
 														dateFormat="MMMM dd yyyy"
@@ -118,7 +122,7 @@ function CheckoutCardForm({ data }) {
 											return (
 												<Fragment>
 													<DatePicker
-														selected={field.value}
+														selected={Date.parse(field.value)}
 														onChange={handleEndDateChange}
 														minDate={nextDate}
 														dateFormat="MMMM dd yyyy"
@@ -147,8 +151,8 @@ function CheckoutCardForm({ data }) {
 												<label className="checkbox-list">
 													<input
 														type="checkbox"
-														// value={field.value}
-														onChange={() => form.setFieldValue("guide", !field.value)}
+														value={45}
+														onChange={() => form.setFieldValue("guide", field.value)}
 													/>
 													<span className="custom-checkbox" />
 													Tour guide
@@ -166,8 +170,8 @@ function CheckoutCardForm({ data }) {
 												<label className="checkbox-list">
 													<input
 														type="checkbox"
-														// value={field.value}
-														onChange={() => form.setFieldValue("insurance", !field.value)}
+														value={100}
+														onChange={() => form.setFieldValue("insurance", field.value)}
 													/>
 													<span className="custom-checkbox" />
 													Insurance
@@ -185,8 +189,8 @@ function CheckoutCardForm({ data }) {
 												<label className="checkbox-list">
 													<input
 														type="checkbox"
-														// value={field.value}
-														onChange={() => form.setFieldValue("dinner", !field.value)}
+														value={150}
+														onChange={() => form.setFieldValue("dinner", field.value)}
 													/>
 													<span className="custom-checkbox" />
 													Dinner
@@ -204,11 +208,11 @@ function CheckoutCardForm({ data }) {
 												<label className="checkbox-list">
 													<input
 														type="checkbox"
-														// value={field.value}
-														onChange={() => form.setFieldValue("bikeRent", !field.value)}
+														value={25}
+														onChange={() => form.setFieldValue("bikeRent", field.value)}
 													/>
 													<span className="custom-checkbox" />
-													Dinner
+													Bike Rent
 												</label>
 											);
 										}}

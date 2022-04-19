@@ -1,12 +1,14 @@
+import checkoutFormModel from "form-model/checkout-form-model";
+import useLocalStorageState from "hooks/use-local-storage-state";
 import React, { createContext, useContext, useReducer, useMemo, useEffect } from "react";
-import { useLocalStorage } from "react-use";
 
 import cartReducer, {
 	ADD_ITEM_TO_CART,
 	REMOVE_ITEM_FROM_CART,
 	INCREASE_QUANTITY,
 	DECREASE_QUANTITY,
-	initialState
+	initialState,
+	ADD_GUEST
 } from "./cart.reducer";
 
 import { getItem } from "./cart.utils";
@@ -14,6 +16,10 @@ import { getItem } from "./cart.utils";
 const cartContext = createContext();
 
 cartContext.displayName = "CartContext";
+
+const { formId, formField } = checkoutFormModel;
+
+const LOCAL_STORAGE_KEY = "travel:cart";
 
 export function useCart() {
 	const context = useContext(cartContext);
@@ -23,13 +29,28 @@ export function useCart() {
 	return context;
 }
 
-function CartProvider(props) {
-	const [savedCart, handleCart] = useLocalStorage(`travel:cart`, JSON.stringify(initialState));
+const INITIAL_VALUES = {
+	items: [],
+	guest: {},
+	isEmpty: true,
+	totalItems: 0,
+	totalUniqueItems: 0,
+	total: 0,
+	meta: null
+};
 
-	const [state, dispatch] = useReducer(cartReducer, JSON.parse(savedCart));
+function CartProvider(props) {
+	const [savedCart, handleCart] = useLocalStorageState({
+		key: LOCAL_STORAGE_KEY,
+		value: INITIAL_VALUES
+	});
+
+	// console.log("savedCart -->", savedCart);
+
+	const [state, dispatch] = useReducer(cartReducer, savedCart);
 
 	useEffect(() => {
-		handleCart(JSON.stringify(state));
+		handleCart(state);
 	}, [state, handleCart]);
 
 	const increaseQty = (item, qty) => {
@@ -62,6 +83,13 @@ function CartProvider(props) {
 		});
 	};
 
+	const addGuest = (guest) => {
+		dispatch({
+			type: ADD_GUEST,
+			guest
+		});
+	};
+
 	const isInCart = (id) => !!getItem(state.items, id);
 
 	const getItemFromCart = (id) => getItem(state.items, id);
@@ -74,7 +102,8 @@ function CartProvider(props) {
 			addItemToCart,
 			clearItemFromCart,
 			getItemFromCart,
-			isInCart
+			isInCart,
+			addGuest
 		}),
 		[state]
 	);

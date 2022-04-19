@@ -2,12 +2,15 @@ import CartFooter from "components/cart/CartFooter";
 import CartItem from "components/cart/CartItem";
 import DiscountForm from "components/cart/DiscountForm";
 import { useCart } from "context/cart/cart.provider";
+import { useUI } from "context/ui.context";
 import React from "react";
 
 function CheckoutCart({ currentIdx, handleNext }) {
 	const {
 		state: { items }
 	} = useCart();
+
+	const { setNextIdx } = useUI();
 
 	return (
 		<div className="cart-list-inner">
@@ -33,7 +36,7 @@ function CheckoutCart({ currentIdx, handleNext }) {
 					<CartFooter />
 				</div>
 				<div className="checkBtnArea text-right">
-					<a href="#" className="button-primary" onClick={() => handleNext()}>
+					<a href="#" className="button-primary" onClick={() => setNextIdx()}>
 						checkout
 					</a>
 				</div>

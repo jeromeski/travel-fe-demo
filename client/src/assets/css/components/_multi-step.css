@@ -1,0 +1,132 @@
+.step-section {
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 575px) {
+  .step-section {
+    margin-bottom: 50px;
+  }
+}
+
+.step-container {
+  margin-left: 75px;
+  margin-right: 75px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 575px) {
+  .step-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.step-link-wrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.step-link-wrap .step-item {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  width: 33.33%;
+  position: relative;
+}
+.step-link-wrap .step-item a {
+  background-color: #ffffff;
+  display: block;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  border-radius: 100%;
+  border: 6px solid #f1f1f1;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.step-link-wrap .step-item:before, .step-link-wrap .step-item:after {
+  background-color: #f1f1f1;
+  content: "";
+  height: 6px;
+  width: 50%;
+  position: absolute;
+  bottom: 16px;
+  z-index: -1;
+}
+
+.step-link-wrap .step-item.active:before {
+  background-color: #F56960;;
+}
+.step-link-wrap .step-item.active:after {
+  background-color: #F56960;;
+}
+.step-link-wrap .step-item:before {
+  left: 0;
+}
+.step-link-wrap .step-item:after {
+  right: 0;
+}
+.step-link-wrap .step-item:first-child:before {
+  display: none;
+}
+.step-link-wrap .step-item:last-child:after {
+  display: none;
+}
+
+
+.step-link-wrap .step-item:nth-child(1).active a {
+  background-color: #F56960;
+}
+
+/* step 1 progress */
+.step-link-wrap .step-item:nth-child(1).active::after {
+  background-color: #f1f1f1;
+}
+.step-link-wrap .step-item:nth-child(1).full.active::after {
+  background-color: #F56960;;
+}
+
+
+.step-link-wrap .step-item:nth-child(2).active a {
+  background-color: #F56960;
+}
+/* step 2 progress */
+.step-link-wrap .step-item:nth-child(2).active::after {
+  background-color: #f1f1f1;
+}
+.step-link-wrap .step-item:nth-child(2).full.active::after {
+  background-color: #F56960;;
+}
+
+/* step 3 progress */
+.step-link-wrap .step-item:nth-child(3).active a {
+  background-color: #F56960;
+}
+
+@media screen and (max-width: 575px) {
+  .step-link-wrap {
+    margin-bottom: 50px;
+    font-size: 13px;
+  }
+  .step-link-wrap .step-item:before, .step-link-wrap .step-item:after {
+    height: 4px;
+    bottom: 10px;
+  }
+  .step-link-wrap .step-item a {
+    border-width: 4px;
+    margin-top: 15px;
+    height: 25px;
+    width: 25px;
+  }
+}

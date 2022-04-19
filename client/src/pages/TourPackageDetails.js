@@ -22,8 +22,6 @@ function TourPackageDetails() {
 		return <h1>LOADING...</h1>;
 	}
 
-	console.log(packageData.rating);
-
 	return (
 		<div className="single-tour-section">
 			<div className="container">

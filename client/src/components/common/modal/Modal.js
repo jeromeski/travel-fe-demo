@@ -39,7 +39,7 @@ const Modal = ({ children, open }) => {
 						className="motion-div">
 						<div className="modal-base">
 							<div className="row h-100">
-								<div className="col d-flex justify-content-center align-items-center">
+								<div className="col d-flex justify-content-center align-items-center position-relative">
 									<div ref={modalInnerRef}>{children}</div>
 								</div>
 							</div>

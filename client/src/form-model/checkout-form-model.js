@@ -42,19 +42,23 @@ export default {
 		},
 		guide: {
 			name: "guide",
-			value: false
+			value: false,
+			price: 45
 		},
 		dinner: {
 			name: "dinner",
-			value: false
+			value: false,
+			price: 150
 		},
 		insurance: {
 			name: "insurance",
-			value: false
+			value: false,
+			price: 100
 		},
 		bikeRent: {
 			name: "bikeRent",
-			value: false
+			value: false,
+			price: 25
 		},
 		nameOnCard: {
 			name: "nameOnCard",

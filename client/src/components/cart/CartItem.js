@@ -6,7 +6,7 @@ import Counter from "../ui/Counter";
 const CartItem = (item) => {
 	const { _id, images, name, price, qty } = item;
 
-	useLogger("CartItem -->");
+	// useLogger("CartItem -->");
 	const { increaseQty, decreaseQty, clearItemFromCart } = useCart();
 	const handleClearFromCart = (e) => {
 		e.preventDefault();

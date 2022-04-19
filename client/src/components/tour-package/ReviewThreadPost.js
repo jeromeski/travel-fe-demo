@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 
 function ReviewThreadPost(props) {
 	const { id, author, postedOn, postRating, postContent } = props;
-	const { openModal, closeModal, setModalView } = useUI();
+	const { openModal, setModalView } = useUI();
 
 	const handleReply = () => {
 		setModalView("COMMENT_VIEW");
