@@ -20,12 +20,19 @@ const {
 		state,
 		postalCode,
 		additionalInfo,
-		tos
+		tos,
+		bikeRent,
+		insurance,
+		dinner,
+		guide
 	}
 } = checkoutFormModel;
 
-const checkout = {
-	items: [],
+const CHECKOUT_INITIAL_VALUES = {
+	[bikeRent.name]: 0,
+	[insurance.name]: 0,
+	[dinner.name]: 0,
+	[guide.name]: 0,
 	[firstName.name]: "",
 	[lastName.name]: "",
 	[email.name]: "",
@@ -48,4 +55,4 @@ const checkout = {
 	[tos.name]: ""
 };
 
-export default checkout;
+export default CHECKOUT_INITIAL_VALUES;

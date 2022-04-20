@@ -1,4 +1,3 @@
-import checkoutFormModel from "form-model/checkout-form-model";
 import useLocalStorageState from "hooks/use-local-storage-state";
 import React, { createContext, useContext, useReducer, useMemo, useEffect } from "react";
 
@@ -7,7 +6,6 @@ import cartReducer, {
 	REMOVE_ITEM_FROM_CART,
 	INCREASE_QUANTITY,
 	DECREASE_QUANTITY,
-	initialState,
 	ADD_GUEST
 } from "./cart.reducer";
 
@@ -16,8 +14,6 @@ import { getItem } from "./cart.utils";
 const cartContext = createContext();
 
 cartContext.displayName = "CartContext";
-
-const { formId, formField } = checkoutFormModel;
 
 const LOCAL_STORAGE_KEY = "travel:cart";
 
@@ -31,7 +27,31 @@ export function useCart() {
 
 const INITIAL_VALUES = {
 	items: [],
-	guest: {},
+	guest: {
+		bikeRent: 0,
+		insurance: 0,
+		dinner: 0,
+		guide: 0,
+		firstName: "",
+		lastName: "",
+		email: "",
+		confirmEmail: "",
+		phone: "",
+		start: "",
+		end: "",
+		nameOnCard: "",
+		cardNumber: "",
+		expiryDate: "",
+		cvv: "",
+		country: "",
+		street1: "",
+		street2: "",
+		city: "",
+		state: "",
+		postalCode: "",
+		additionalInfo: "",
+		tos: ""
+	},
 	isEmpty: true,
 	totalItems: 0,
 	totalUniqueItems: 0,

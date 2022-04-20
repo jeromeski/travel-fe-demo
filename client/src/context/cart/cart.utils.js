@@ -18,17 +18,18 @@ export function removeItem(items, item) {
 }
 
 export function calculateItemsSubTotalAmount(items) {
-	return items.map((item) => ({
-		...item,
-		subTotal: item.qty * item.price
-	}));
+	return items.reduce((total, item) => total + item.qty * item.price, 0);
 }
 
 export function calculateItemsTotalAmount(items, guest) {
 	return items.reduce((total, item) => {
 		const addons = guest.bikeRent + guest.dinner + guest.insurance;
-    const newPrice = item.price + addons;
-		return total + item.qty * newPrice;
+		let newPrice = item.price + addons;
+		// const newTotal = total + guest.guide + item.qty * newPrice;
+		newPrice = newPrice * item.qty;
+		let updatedItemTotal = newPrice + (guest.guide * 118) / 100;
+
+		return total + updatedItemTotal;
 	}, 0);
 }
 

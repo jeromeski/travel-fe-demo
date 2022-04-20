@@ -6,12 +6,39 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useCart } from "context/cart/cart.provider";
 import { useHistory } from "react-router-dom";
 import useLocalStorageState from "hooks/use-local-storage-state";
-import INITIAL_VALUES from "form-model/form-initial-values";
+
 import checkoutFormModel from "form-model/checkout-form-model";
+// import CHECKOUT_INITIAL_VALUES from "form-model/checkout-form-model";
 
 const { formId, formField } = checkoutFormModel;
 
 const LOCAL_STORAGE_KEY = "travel:checkout";
+
+const CHECKOUT_INITIAL_VALUES = {
+	bikeRent: 0,
+	insurance: 0,
+	dinner: 0,
+	guide: 0,
+	firstName: "",
+	lastName: "",
+	email: "",
+	confirmEmail: "",
+	phone: "",
+	start: "",
+	end: "",
+	nameOnCard: "",
+	cardNumber: "",
+	expiryDate: "",
+	cvv: "",
+	country: "",
+	street1: "",
+	street2: "",
+	city: "",
+	state: "",
+	postalCode: "",
+	additionalInfo: "",
+	tos: ""
+};
 
 function CheckoutCardForm({ data }) {
 	const today = new Date();
@@ -19,28 +46,22 @@ function CheckoutCardForm({ data }) {
 	// Date.now() gives the epoch date value (in milliseconds) of current date
 	const nextDate = new Date(Date.now() + days * 24 * 60 * 60 * 1000);
 
-	const { addItemToCart } = useCart();
-
-	const [paymentInfo, setInfoInLocalStorage] = useLocalStorageState({
-		key: LOCAL_STORAGE_KEY,
-		value: INITIAL_VALUES
-	});
+	const { addItemToCart, addGuest } = useCart();
 
 	const history = useHistory();
 	// useEffect(() => {
 	// 	setInfoInLocalStorage(INITIAL_VALUES);
 	// }, []);
 
-	console.log("CCF -->", paymentInfo);
-
 	const onSubmit = async (values, formikProps) => {
+		addGuest(values);
 		addItemToCart(data);
-		await setInfoInLocalStorage(values);
+
 		history.push("/checkout-flow");
 	};
 
 	return (
-		<Formik initialValues={paymentInfo} onSubmit={onSubmit}>
+		<Formik initialValues={CHECKOUT_INITIAL_VALUES} onSubmit={onSubmit}>
 			{(formik) => {
 				return (
 					<form
@@ -145,14 +166,20 @@ function CheckoutCardForm({ data }) {
 							</div>
 							<div className="col-sm-6">
 								<div className="form-group">
-									<Field name="guide">
+									<Field name={formField.guide.name}>
 										{({ form, field, meta }) => {
 											return (
 												<label className="checkbox-list">
 													<input
 														type="checkbox"
-														value={45}
-														onChange={() => form.setFieldValue("guide", field.value)}
+														checked={field.value === formField.guide.price}
+														onChange={(e) => {
+															if (e.target.checked) {
+																form.setFieldValue(formField.guide.name, formField.guide.price);
+															} else {
+																form.setFieldValue(formField.guide.name, 0);
+															}
+														}}
 													/>
 													<span className="custom-checkbox" />
 													Tour guide
@@ -164,14 +191,23 @@ function CheckoutCardForm({ data }) {
 							</div>
 							<div className="col-sm-6">
 								<div className="form-group">
-									<Field name="insurance">
+									<Field name={formField.insurance.name}>
 										{({ form, field, meta }) => {
 											return (
 												<label className="checkbox-list">
 													<input
 														type="checkbox"
-														value={100}
-														onChange={() => form.setFieldValue("insurance", field.value)}
+														checked={field.value === formField.insurance.price}
+														onChange={(e) => {
+															if (e.target.checked) {
+																form.setFieldValue(
+																	formField.insurance.name,
+																	formField.insurance.price
+																);
+															} else {
+																form.setFieldValue(formField.insurance.name, 0);
+															}
+														}}
 													/>
 													<span className="custom-checkbox" />
 													Insurance
@@ -183,14 +219,20 @@ function CheckoutCardForm({ data }) {
 							</div>
 							<div className="col-sm-6">
 								<div className="form-group">
-									<Field name="dinner">
+									<Field name={formField.dinner.name}>
 										{({ form, field, meta }) => {
 											return (
 												<label className="checkbox-list">
 													<input
 														type="checkbox"
-														value={150}
-														onChange={() => form.setFieldValue("dinner", field.value)}
+														checked={field.value === formField.dinner.price}
+														onChange={(e) => {
+															if (e.target.checked) {
+																form.setFieldValue(formField.dinner.name, formField.dinner.price);
+															} else {
+																form.setFieldValue(formField.dinner.name, 0);
+															}
+														}}
 													/>
 													<span className="custom-checkbox" />
 													Dinner
@@ -202,14 +244,23 @@ function CheckoutCardForm({ data }) {
 							</div>
 							<div className="col-sm-6">
 								<div className="form-group">
-									<Field name="bikeRent">
+									<Field name={formField.bikeRent.name}>
 										{({ form, field, meta }) => {
 											return (
 												<label className="checkbox-list">
 													<input
 														type="checkbox"
-														value={25}
-														onChange={() => form.setFieldValue("bikeRent", field.value)}
+														checked={field.value === formField.bikeRent.price}
+														onChange={(e) => {
+															if (e.target.checked) {
+																form.setFieldValue(
+																	formField.bikeRent.name,
+																	formField.bikeRent.price
+																);
+															} else {
+																form.setFieldValue(formField.bikeRent.name, 0);
+															}
+														}}
 													/>
 													<span className="custom-checkbox" />
 													Bike Rent

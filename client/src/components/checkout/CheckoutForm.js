@@ -1,8 +1,5 @@
-import { Formik, useFormikContext } from "formik";
+import { Formik } from "formik";
 import React, { Fragment, useEffect, useState } from "react";
-import INITIAL_VALUES from "form-model/form-initial-values";
-import checkoutValidationSchema from "form-model/checkout-validation-schema";
-import useLocalStorageState from "hooks/use-local-storage-state";
 
 import Sidebar from "components/layout/Sidebar";
 import Widget from "components/ui/Widget";
@@ -13,7 +10,6 @@ import { monthList, yearList } from "utils";
 import Input from "components/ui/Input";
 import { CountryDropdown } from "react-country-region-selector";
 import checkoutFormModel from "form-model/checkout-form-model";
-import _ from "lodash";
 import cards from "assets/images/cards.png";
 import ccv from "assets/images/icon_ccv.gif";
 import { useUI } from "context/ui.context";
@@ -24,13 +20,10 @@ const LOCAL_STORAGE_KEY = "travel:checkout";
 
 function CheckoutForm() {
 	const {
-		state: { total, items }
+		state: { subTotal, total, items, totalItems, guest }
 	} = useCart();
 
-	const [initialValues, setInfoInLocalStorage] = useLocalStorageState({
-		key: LOCAL_STORAGE_KEY,
-		value: INITIAL_VALUES
-	});
+	const { bikeRent, insurance, dinner, guide } = guest;
 
 	const { openModal, setModalView, setPrevIdx } = useUI();
 
@@ -40,12 +33,8 @@ function CheckoutForm() {
 		setPrevIdx((prev) => prev - 1);
 	};
 
-	const { bikeRent, dinner, guide, insurance } = initialValues;
-	console.log("CHECKOUT FORM -->", initialValues);
-
 	const handleSubmit = async (values) => {
 		setModalView("CHECKOUT_VIEW");
-		await setInfoInLocalStorage(values);
 		openModal(true);
 	};
 
@@ -55,7 +44,7 @@ function CheckoutForm() {
 				<div className="col-lg-8">
 					<div className="booking-form-wrap">
 						<Formik
-							initialValues={initialValues}
+							initialValues={guest}
 							// validationSchema={checkoutValidationSchema}
 							onSubmit={(values, formikProps) => {
 								handleSubmit(values);
@@ -320,12 +309,7 @@ function CheckoutForm() {
 														return (
 															<div className="form-group">
 																<label className="checkbox-list">
-																	<input
-																		type="checkbox"
-																		name="s"
-																		checked={field.value}
-																		{...field}
-																	/>
+																	<input type="checkbox" checked={field.value} {...field} />
 																	<span className="custom-checkbox"></span>I accept terms and
 																	conditions and general policy.
 																	<div className="text-danger">
@@ -366,14 +350,14 @@ function CheckoutForm() {
 										<td>
 											<strong>Packages cost </strong>
 										</td>
-										<td className="text-right">${total ? total : 12000}</td>
+										<td className="text-right">${subTotal}</td>
 									</tr>
 									{guide && (
 										<tr>
 											<td>
 												<strong>Dedicated tour guide</strong>
 											</td>
-											<td className="text-right">${guide ? items.length * 45 : ""}</td>
+											<td className="text-right">${guide}</td>
 										</tr>
 									)}
 									{dinner && (
@@ -381,7 +365,7 @@ function CheckoutForm() {
 											<td>
 												<strong>Dinner</strong>
 											</td>
-											<td className="text-right">${dinner ? items.length * 150 : ""}</td>
+											<td className="text-right">${totalItems * guest.dinner}</td>
 										</tr>
 									)}
 									{insurance && (
@@ -389,7 +373,7 @@ function CheckoutForm() {
 											<td>
 												<strong>Insurance</strong>
 											</td>
-											<td className="text-right">${insurance ? items.length * 100 : ""}</td>
+											<td className="text-right">${totalItems * guest.insurance}</td>
 										</tr>
 									)}
 									{bikeRent && (
@@ -397,7 +381,7 @@ function CheckoutForm() {
 											<td>
 												<strong>Bike Rent</strong>
 											</td>
-											<td className="text-right">${guide ? items.length * 25 : ""}</td>
+											<td className="text-right">${totalItems * guest.bikeRent}</td>
 										</tr>
 									)}
 
@@ -405,14 +389,14 @@ function CheckoutForm() {
 										<td>
 											<strong>tax</strong>
 										</td>
-										<td className="text-right">13%</td>
+										<td className="text-right">18%</td>
 									</tr>
 									<tr className="total">
 										<td>
 											<strong>Total cost</strong>
 										</td>
 										<td className="text-right">
-											<strong>{total}</strong>
+											<strong>${Math.round(total)}</strong>
 										</td>
 									</tr>
 								</tbody>

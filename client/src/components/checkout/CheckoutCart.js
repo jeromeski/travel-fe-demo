@@ -7,10 +7,12 @@ import React from "react";
 
 function CheckoutCart({ currentIdx, handleNext }) {
 	const {
-		state: { items }
+		state: { items, guest }
 	} = useCart();
 
 	const { setNextIdx } = useUI();
+
+	console.log(items, guest);
 
 	return (
 		<div className="cart-list-inner">

@@ -13,16 +13,42 @@ export const REMOVE_ITEM_FROM_CART = "REMOVE_ITEM_FROM_CART";
 export const RESET_CART = "RESET_CART";
 export const ADD_GUEST = "ADD_GUEST";
 
-export const initialState = {
+export const CART_INITIAL_STATE = {
 	items: [],
 	isEmpty: true,
 	totalItems: 0,
 	totalUniqueItems: 0,
 	total: 0,
-	meta: null
+	meta: null,
+	subTotal: 0,
+	guest: {
+		bikeRent: 0,
+		insurance: 0,
+		dinner: 0,
+		guide: 0,
+		firstName: "",
+		lastName: "",
+		email: "",
+		confirmEmail: "",
+		phone: "",
+		start: "",
+		end: "",
+		nameOnCard: "",
+		cardNumber: "",
+		expiryDate: "",
+		cvv: "",
+		country: "",
+		street1: "",
+		street2: "",
+		city: "",
+		state: "",
+		postalCode: "",
+		additionalInfo: "",
+		tos: ""
+	}
 };
 
-function cartReducer(state, action) {
+function cartReducer(state = CART_INITIAL_STATE, action) {
 	switch (action.type) {
 		case INCREASE_QUANTITY: {
 			const items = state.items.map((item) =>
@@ -61,7 +87,6 @@ function cartReducer(state, action) {
 				return state;
 			}
 			const updatedItems = [...state.items, action.item];
-			console.log("updatedItems -->", updatedItems);
 			const items = updatedItems.map((item) =>
 				item._id === action.item._id
 					? {
@@ -90,15 +115,18 @@ function cartReducer(state, action) {
 	}
 }
 
-const generateFinalState = (state, items, guest) => {
+const generateFinalState = (state, items) => {
 	const totalUniqueItems = calculateUniqueItems(items);
+	const guest = state.guest;
 	return {
 		...state,
-		items: calculateItemsSubTotalAmount(items),
+		items: items,
 		totalItems: calculateItemsTotalQuantity(items),
 		totalUniqueItems,
-		total: calculateItemsTotalAmount(items),
-		isEmpty: totalUniqueItems === 0
+		total: calculateItemsTotalAmount(items, guest),
+		isEmpty: totalUniqueItems === 0,
+		guest: guest,
+		subTotal: calculateItemsSubTotalAmount(items)
 	};
 };
 
